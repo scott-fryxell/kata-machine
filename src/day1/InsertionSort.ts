@@ -18,7 +18,8 @@ export default function insertion_sort(arr: number[]): void {
 // Example usage
 // let array = [64, 35, 25, 12, 22, 11, 90];
 // console.log("Unsorted array:", array);
-// console.log("Sorted array:", insertion_sort(array));
+// insertion_sort(array) // [11, 12, 22, 25, 35, 64, 90]
+// console.log("Sorted array:", array );
 
 // the critical point is that an array of one element is sorted which is why i = 1 rather than 0
 
