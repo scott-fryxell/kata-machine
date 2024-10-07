@@ -1,7 +1,12 @@
-import ArrayList from "@/array-list";
-import { test_list } from "@@/list-test";
+import ArrayList from "@/array-list"
+import { test_list } from "@@/list-test"
 
-test("array-list", function () {
-    const list = new ArrayList<number>(3);
-    test_list(list);
+
+/**
+ * @typedef {import('@/array-list').default} ArrayList
+ */
+test("array-list", () => {
+  /** @type {ArrayList<number>} */
+  const list = new ArrayList(3);
+  test_list(list);
 });
