@@ -1,5 +1,9 @@
 
-export default function insertion_sort(arr: number[]): void {
+/**
+ * @param {number[]} arr
+ * @returns {void}
+ */
+export default function insertion_sort(arr) {
 
   for (let i = 1; i < arr.length; i++) {
     let current = arr[i];

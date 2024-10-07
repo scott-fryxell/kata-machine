@@ -4,7 +4,14 @@
 //  this is suseptable to off by one error
 // high is inclusive
 // assumes the array is sorted
-export default function bs_list(haystack: number[], needle: number): boolean {
+
+
+/**
+ * @param {number[]} haystack - The sorted array to search in
+ * @param {number} needle - The value to search for
+ * @returns {boolean} - True if the needle is found, false otherwise
+ */
+export default function bs_list(haystack, needle) {
   let low = 0
   let high = haystack.length
   do {
