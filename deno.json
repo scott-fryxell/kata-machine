@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "resolveJsonModule": true,
+    "target": "esnext",
+    "baseUrl": "src"
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "test": {
+    "include": [
+      "./tests/**/*.js"
+    ]
+  },
+  "imports": {
+    "@/": "./src/day1/",
+    "@@/": "./tests/"
+  },
+  "dsa": [
+    "DFSOnBST",
+    "LRU",
+    "LinearSearchList",
+    "BinarySearchList",
+    "TwoCrystalBalls",
+    "BubbleSort",
+    "SinglyLinkedList",
+    "DoublyLinkedList",
+    "Queue",
+    "Stack",
+    "ArrayList",
+    "MazeSolver",
+    "QuickSort",
+    "BTPreOrder",
+    "BTInOrder",
+    "BTPostOrder",
+    "BTBFS",
+    "CompareBinaryTrees",
+    "DFSOnBST",
+    "DFSGraphList",
+    "Trie",
+    "BFSGraphMatrix",
+    "Map",
+    "MinHeap"
+  ]
+}
