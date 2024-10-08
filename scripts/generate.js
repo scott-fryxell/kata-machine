@@ -1,21 +1,34 @@
 import { ensureDir as ensure_dir, exists } from "https://deno.land/std/fs/mod.ts";
 import { join, dirname } from "https://deno.land/std/path/mod.ts";
+let output_dir
 
 const interface_file = "src/interface.js";
-const output_dir = "src/generated";
-
 /**
- * @typedef {Object} ExportMap
+ * @typedef {Object} Export_Map
  * @property {string} [key: string]
  */
 
 /**
+ * @param {number} day
+ * @returns {Promise<string>}
+ * @description Generates the next day's directory if it doesn't exist.
+ */
+const next_day = async day => {
+  output_dir = `src/${day}`;
+  console.log("day", day);
+  if (await exists(output_dir)){
+    await next_day(day + 1)
+  }
+  else return
+}
+
+/**
  * Extracts export statements from the given content.
  * @param {string} content - The content to extract exports from.
- * @returns {ExportMap} An object containing the extracted exports.
+ * @returns {Export_Map} An object containing the extracted exports.
  */
-function extract_exports(content) {
-  /** @type {ExportMap} */
+const extract_exports = content => {
+  /** @type {Export_Map} */
   const exports = {};
   const export_regex = /export\s+(const|default\s+function|class)\s+(\w+)/g;
   let match;
@@ -31,14 +44,11 @@ function extract_exports(content) {
   return exports;
 }
 
-// Read the interface file
-const content = await Deno.readTextFile(interface_file);
-
-
-// Ensure output directory exists
+await next_day(1);
+console.log("next_day", output_dir);
 await ensure_dir(output_dir);
 
-// Extract exports from the interface file
+const content = await Deno.readTextFile(interface_file);
 const exports = extract_exports(content);
 
 // Generate files

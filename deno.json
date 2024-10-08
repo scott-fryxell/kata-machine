@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "resolveJsonModule": true,
-    "target": "esnext",
-    "baseUrl": "src"
+    "strict": true
   },
   "tasks": {
     "generate": "deno run --allow-read --allow-write scripts/generate.js"
@@ -17,33 +14,7 @@
     ]
   },
   "imports": {
-    "@/": "./src/day1/",
+    "@/": "./src/1/",
     "@@/": "./tests/"
-  },
-  "dsa": [
-    "DFSOnBST",
-    "LRU",
-    "LinearSearchList",
-    "BinarySearchList",
-    "TwoCrystalBalls",
-    "BubbleSort",
-    "SinglyLinkedList",
-    "DoublyLinkedList",
-    "Queue",
-    "Stack",
-    "ArrayList",
-    "MazeSolver",
-    "QuickSort",
-    "BTPreOrder",
-    "BTInOrder",
-    "BTPostOrder",
-    "BTBFS",
-    "CompareBinaryTrees",
-    "DFSOnBST",
-    "DFSGraphList",
-    "Trie",
-    "BFSGraphMatrix",
-    "Map",
-    "MinHeap"
-  ]
+  }
 }

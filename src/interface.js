@@ -140,10 +140,10 @@ export const insertion_sort = arr => {
   /**
    * Example usage:
    * @example
-   * let array = [64, 35, 25, 12, 22, 11, 90];
-   * console.log("Unsorted array:", array);
-   * insertion_sort(array);
-   * console.log("Sorted array:", array); // [11, 12, 22, 25, 35, 64, 90]
+   * let array = [64, 35, 25, 12, 22, 11, 90]
+   * console.log("Unsorted array:", array)
+   * insertion_sort(array)
+   * console.log("Sorted array:", array) // [11, 12, 22, 25, 35, 64, 90]
    */
 }
 
@@ -180,19 +180,19 @@ export const Queue = class {
    * @private
    * @type {number}
    */
-  length;
+  length
 
   /**
    * @private
-   * @type {QueueNode<T> | undefined}
+   * @type {Queue_Node<T> | undefined}
    */
-  head;
+  head
 
   /**
    * @private
-   * @type {QueueNode<T> | undefined}
+   * @type {Queue_Node<T> | undefined}
    */
-  tail;
+  tail
 
   constructor() { }
 
@@ -219,17 +219,19 @@ export const Queue = class {
  * @template T
  */
 export const Stack = class {
+
   /**
    * @type {number}
    * @private
    */
-  length;
+  length
 
   /**
    * @type {Stack_Node<T> | undefined}
    * @private
    */
-  head;
+  head
+
   constructor() { }
 
   /**
@@ -253,11 +255,12 @@ export const Stack = class {
  * @template T
  */
 export const Singly_Linked_List = class {
+
   /**
    * @type {number}
    * @private
    */
-  length;
+  length
   constructor() { }
 
   /**
@@ -306,7 +309,7 @@ export default class Doubly_Linked_List {
    * @type {number}
    * @private
    */
-  length;
+  length
 
   constructor() { }
 
@@ -314,37 +317,32 @@ export default class Doubly_Linked_List {
    * @param {T} item
    * @returns {void}
    */
-  prepend(item) {
-  }
+  prepend(item) { }
 
   /**
    * @param {T} item
    * @param {number} idx
    * @returns {void}
    */
-  insert_at(item, idx) {
-  }
+  insert_at(item, idx) { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  append(item) {
-  }
+  append(item) { }
 
   /**
    * @param {T} item
    * @returns {T | undefined}
    */
-  remove(item) {
-  }
+  remove(item) { }
 
   /**
    * @param {number} idx
    * @returns {T | undefined}
    */
-  get(idx) {
-  }
+  get(idx) { }
 
   /**
    * @param {number} idx
@@ -362,7 +360,7 @@ export const Array_List = class {
    * @type {number}
    * @private
    */
-  length;
+  length
   constructor() { }
 
   /**
@@ -406,11 +404,12 @@ export const Array_List = class {
  * @template T
  */
 export const Ring_Buffer = class {
+
   /**
    * @type {number}
    * @private
    */
-  length;
+  length
 
   /**
    * @param {number} initial_size
@@ -479,6 +478,7 @@ export const Ring_Buffer = class {
  * @class MinHeap
  */
 export const Min_Heap = class {
+
   /**
    * @type {number}
    * @private
@@ -489,13 +489,11 @@ export const Min_Heap = class {
    * @param {number} value
    * @returns {void}
    */
-  insert(value) {
-  }
+  insert(value) { }
   /**
    * @returns {number}
    */
-  delete() {
-  }
+  delete() { }
 }
 
 /**
