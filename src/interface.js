@@ -305,6 +305,7 @@ export const Singly_Linked_List = class {
  * @template T
  */
 export default class Doubly_Linked_List {
+
   /**
    * @type {number}
    * @private
