@@ -7,10 +7,24 @@
 
 /**
  * @template T
- * @typedef {Object} ListNode
+ * @typedef {Object} List_Node
  * @property {T} value
- * @property {ListNode<T>} [next]
- * @property {ListNode<T>} [prev]
+ * @property {List_Node<T>} [next]
+ * @property {List_Node<T>} [prev]
+ */
+
+/**
+ * @template T
+ * @typedef {Object} Stack_Node
+ * @property {T} value
+ * @property {Stack_Node<T>} [prev]
+ */
+
+/**
+ * @template T
+ * @typedef {Object} Queue_Node
+ * @property {T} value
+ * @property {Queue_Node<T>} [next]
  */
 
 /**
@@ -26,44 +40,44 @@
  */
 
 /**
- * @typedef {Object} CompleteGraphEdge
+ * @typedef {Object} Complete_Graph_Edge
  * @property {number} from
  * @property {number} to
  * @property {number} weight
  */
 
 /**
- * @typedef {Object} GraphEdge
+ * @typedef {Object} Graph_Edge
  * @property {number} to
  * @property {number} weight
  */
 
-/** @typedef {GraphEdge[][]} WeightedAdjacencyList */
-/** @typedef {number[][]} WeightedAdjacencyMatrix */
-/** @typedef {number[][]} AdjacencyList */
-/** @typedef {number[][]} AdjacencyMatrix */
+/** @typedef {number[][]} Adjacency_List */
+/** @typedef {number[][]} Adjacency_Matrix */s
+/** @typedef {Graph_Edge[][]} Weighted_Adjacency_List */
+/** @typedef {number[][]} Weighted_Adjacency_Matrix */
+
 /**
  * @template T
- * @typedef {Object} BinaryNode
+ * @typedef {Object} Binary_Node
  * @property {T} value
- * @property {BinaryNode<T>|null} left
- * @property {BinaryNode<T>|null} right
+ * @property {Binary_Node<T>|null} left
+ * @property {Binary_Node<T>|null} right
  */
 
 /**
  * @template T
- * @typedef {Object} GeneralNode
+ * @typedef {Object} General_Node
  * @property {T} value
- * @property {GeneralNode<T>[]} children
+ * @property {General_Node<T>[]} children
  */
 
 /**
  * @template K, V
- * @typedef {Object} ILRU
+ * @typedef {Object} Least_Recently_Used
  * @property {function(K, V): void} update
  * @property {function(K): V|undefined} get
  */
-
 
 /**
  * Given two crystal balls that will break if dropped from high enough distance,
@@ -73,37 +87,33 @@
  * @param {boolean[]} breaks - An array of boolean values representing whether the ball breaks at each floor.
  * @returns {number} The index where the ball first breaks, or -1 if it never breaks.
  */
-export const two_crystal_balls = breaks => {}
+export const two_crystal_balls = breaks => { }
 
-// search
 /**
  * @param {number[]} haystack
  * @param {number} needle
  * @returns {boolean}
  */
-export const linear_search = (haystack, needle) => {}
+export const linear_search = (haystack, needle) => { }
 
 /**
  * @param {number[]} haystack - The sorted array to search in
  * @param {number} needle - The value to search for
  * @returns {boolean} - True if the needle is found, false otherwise
  */
-export default function binary_search(haystack, needle) {}
-
-
-// Sort
+export const binary_search = (haystack, needle) => { }
 
 /**
  * @param {number[]} arr
  * @returns {void}
  */
-export const quick_sort = arr => {}
+export const quick_sort = arr => { }
 
 /**
  * @param {number[]} arr
  * @returns {void}
  */
-export const merge_sort = arr => {}
+export const merge_sort = arr => { }
 
 /**
  * Performs an insertion sort on the given array.
@@ -151,13 +161,7 @@ export const insertion_sort = arr => {
  * @param {number[]} arr
  * @returns {void}
  */
-export const bubble_sort = arr => {}
-
-/**
- * @typedef {Object} Point
- * @property {number} x
- * @property {number} y
- */
+export const bubble_sort = arr => { }
 
 /**
  * @param {string[]} maze
@@ -166,18 +170,7 @@ export const bubble_sort = arr => {}
  * @param {Point} end
  * @returns {Point[]}
  */
-export const maze_solver = (maze, wall, start, end) => {}
-
-
-
-// linkedlist
-
-/**
- * @template T
- * @typedef {Object} QueueNode
- * @property {T} value
- * @property {QueueNode<T>} [next]
- */
+export const maze_solver = (maze, wall, start, end) => { }
 
 /**
  * @template T
@@ -201,33 +194,26 @@ export const Queue = class {
    */
   tail;
 
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  enqueue(item) {}
+  enqueue(item) { }
 
   // first update head to point to the next value
   // then return out previous head
   /**
    * @returns {T | undefined}
    */
-  deque() {}
+  deque() { }
 
   /**
    * @returns {T | undefined}
    */
-  peek() {}
+  peek() { }
 }
-
-/**
- * @template T
- * @typedef {Object} StackNode
- * @property {T} value
- * @property {StackNode<T>} [prev]
- */
 
 /**
  * @template T
@@ -235,91 +221,94 @@ export const Queue = class {
 export const Stack = class {
   /**
    * @type {number}
+   * @private
    */
   length;
+
   /**
-   * @type {StackNode<T> | undefined}
+   * @type {Stack_Node<T> | undefined}
    * @private
    */
   head;
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  push(item) {}
+  push(item) { }
 
   /**
    * @returns {T | undefined}
    */
-  pop() {}
+  pop() { }
 
   /**
    * @returns {T | undefined}
    */
-  peek() {}
+  peek() { }
 }
 
 /**
  * @template T
  */
-export const SinglyLinkedList = class {
+export const Singly_Linked_List = class {
   /**
    * @type {number}
+   * @private
    */
   length;
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  prepend(item) {}
+  prepend(item) { }
 
   /**
    * @param {T} item
    * @param {number} idx
    * @returns {void}
    */
-  insert_at(item, idx) {}
+  insert_at(item, idx) { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  append(item) {}
+  append(item) { }
 
   /**
    * @param {T} item
    * @returns {T | undefined}
    */
-  remove(item) {}
+  remove(item) { }
 
   /**
    * @param {number} idx
    * @returns {T | undefined}
    */
-  get(idx) {}
+  get(idx) { }
 
   /**
    * @param {number} idx
    * @returns {T | undefined}
    */
-  remove_at(idx) {}
+  remove_at(idx) { }
 }
 
 /**
  * @template T
  */
-export default class DoublyLinkedList {
+export default class Doubly_Linked_List {
   /**
    * @type {number}
+   * @private
    */
   length;
 
-  constructor() {
-  }
+  constructor() { }
 
   /**
    * @param {T} item
@@ -365,103 +354,102 @@ export default class DoublyLinkedList {
   }
 }
 
-
-// ArrayList
-
 /**
  * @template T
  */
-export const ArrayList = class {
+export const Array_List = class {
   /**
    * @type {number}
+   * @private
    */
   length;
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {number} item
    * @returns {void}
    */
-  prepend(item) {}
+  prepend(item) { }
 
   /**
    * @param {T} item
    * @param {number} idx
    * @returns {void}
    */
-  insert_at(item, idx) {}
+  insert_at(item, idx) { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  append(item) {}
+  append(item) { }
 
   /**
    * @param {T} item
    * @returns {T|undefined}
    */
-  remove(item) {}
+  remove(item) { }
 
   /**
    * @param {number} idx
    * @returns {T|undefined}
    */
-  get(idx) {}
+  get(idx) { }
 
   /**
    * @param {number} idx
    * @returns {T|undefined}
    */
-  remove_at(idx) {}
+  remove_at(idx) { }
 }
 /**
  * @template T
  */
-export const RingBuffer = class {
+export const Ring_Buffer = class {
   /**
    * @type {number}
+   * @private
    */
   length;
 
   /**
    * @param {number} initial_size
    */
-  constructor(initial_size) {}
+  constructor(initial_size) { }
 
   /**
    * Shift an item to the beginning of the buffer
    * @param {T} item
    * @returns {void}
    */
-  shift(item) {}
+  shift(item) { }
 
   /**
    * Remove from the beginning of the buffer
    * @param {T} item
    * @returns {void}
    */
-  unshift(item) {}
+  unshift(item) { }
 
   /**
    * Add an item to the end of the buffer
    * @param {T} item
    * @returns {void}
    */
-  push(item) {}
+  push(item) { }
 
   /**
    * @param {T} item
    * @returns {T | undefined}
    */
-  pop(item) {}
+  pop(item) { }
 
   /**
    * Get an item from anywhere in the buffer
    * @param {number} idx
    * @returns {T | undefined}
    */
-  get(idx) {}
+  get(idx) { }
 
   /** These next two methods will have the worst performance
    * as they will require shifting all the elements in the buffer
@@ -473,7 +461,7 @@ export const RingBuffer = class {
    * @param {number} idx
    * @returns {void}
    */
-  insert_at(item, idx) {}
+  insert_at(item, idx) { }
 
   /**
    * Remove an item from anywhere in the buffer
@@ -481,7 +469,7 @@ export const RingBuffer = class {
    * @param {number} idx
    * @returns {T | undefined}
    */
-  remove_at(idx) {}
+  remove_at(idx) { }
 }
 
 
@@ -490,13 +478,13 @@ export const RingBuffer = class {
 /**
  * @class MinHeap
  */
-export const MinHeap = class {
+export const Min_Heap = class {
   /**
    * @type {number}
+   * @private
    */
   length
-  constructor() {
-  }
+  constructor() { }
   /**
    * @param {number} value
    * @returns {void}
@@ -514,27 +502,27 @@ export const MinHeap = class {
  * Represents a Trie data structure.
  */
 export const Trie = class {
-  constructor() {}
+  constructor() { }
   /**
    * Inserts an item into the Trie.
    * @param {string} item - The item to insert.
    * @returns {void}
    */
-  insert(item) {}
+  insert(item) { }
 
   /**
    * Deletes an item from the Trie.
    * @param {string} item - The item to delete.
    * @returns {void}
    */
-  delete(item) {}
+  delete(item) { }
 
   /**
    * Finds all items in the Trie that start with the given partial string.
    * @param {string} partial - The partial string to search for.
    * @returns {string[]} An array of matching items.
    */
-  find(partial) {}
+  find(partial) { }
 }
 
 /**
@@ -542,130 +530,129 @@ export const Trie = class {
  * @template V
  */
 export const Map = class {
-  constructor() {
-  }
+  constructor() { }
 
   /**
    * @param {T} key
    * @returns {V | undefined}
    */
-  get(key) {}
+  get(key) { }
 
   /**
    * @param {T} key
    * @param {V} value
    * @returns {void}
    */
-  set(key, value) {}
+  set(key, value) { }
 
   /**
    * @param {T} key
    * @returns {V | undefined}
    */
-  delete(key) {}
+  delete(key) { }
 
   /**
    * @returns {number}
    */
-  size() {}
+  size() { }
 }
-
 
 /**
  * @template K, V
+ * @implements {Least_Recently_Used}
  */
-export const LeastRecentlyUsed = class {
+export const Least_Recently_Used = class {
   /**
    * @private
    * @type {number}
    */
-  length;
-
-  constructor() {}
+  length
+  constructor() { }
 
   /**
    * @param {K} key
    * @param {V} value
    * @returns {void}
    */
-  update(key, value) {}
+  update(key, value) { }
 
   /**
    * @param {K} key
    * @returns {V | undefined}
    */
-  get(key) {}
+  get(key) { }
 }
 
-
-// graph
-
 /**
- * @param {WeightedAdjacencyList} list - The weighted adjacency list.
+ * @param {Weighted_Adjacency_List} list - The weighted adjacency list.
  * @param {number} from - The source node.
  * @param {number} to - The destination node.
  * @param {number} weight - The weight of the edge.
  * @returns {void}
  */
-export const graph_add_node_list = (list, from, to, weight) => {}
+export const graph_add_node_list = (list, from, to, weight) => { }
 
 /**
- * @param {WeightedAdjacencyMatrix} graph
+ * @param {Weighted_Adjacency_Matrix} graph
  * @param {number} source
  * @param {number} needle
  * @returns {number[]|null}
  */
-export const graph_breadth_first_search_matrix = (graph, source, needle) => {}
+export const graph_breadth_first_matrix = (graph, source, needle) => { }
 
 /**
- * @param {WeightedAdjacencyList} graph
+ * @param {Weighted_Adjacency_List} graph
  * @param {number} source
  * @param {number} needle
  * @returns {number[] | null}
  */
-export const graph_depth_first_search_list = (graph, source, needle) => {}
-
-
-
-// btree
+export const graph_depth_first_list = (graph, source, needle) => { }
 
 /**
- * @param {BinaryNode<number>} head
+ * @param {Weighted_Adjacency_Matrix} graph
+ * @param {number} source
+ * @param {number} needle
+ * @returns {number[] | null}
+ */
+export const graph_depth_first_matrix = (graph, source, needle) => { }
+
+/**
+ * @param {Binary_Node<number> | null} a
+ * @param {Binary_Node<number> | null} b
+ * @returns {boolean}
+ */
+export const btree_compare = (a, b) => { }
+
+/**
+ * @param {Binary_Node<number>} head
  * @returns {number[]}
  */
-export const btree_pre_order_search = head => {}
+export const btree_pre_order = head => { }
 
 /**
- * @param {BinaryNode<number>} head
+ * @param {Binary_Node<number>} head
  * @returns {number[]}
  */
-export const btree_post_order_search = head => {}
+export const btree_post_order = head => { }
 
 /**
- * @param {BinaryNode<number>} head
+ * @param {Binary_Node<number>} head
  * @returns {number[]}
  */
-export const btree_in_order_search = head => {}
+export const btree_in_order = head => { }
 
 /**
- * @param {BinaryNode<number>} head
+ * @param {Binary_Node<number>} head
  * @param {number} needle
  * @returns {boolean}
  */
-export const btree_depth_first_search = (head, needle) => {}
+export const btree_depth_first = (head, needle) => { }
 
 
 /**
- * @param {BinaryNode<number> | null} a
- * @param {BinaryNode<number> | null} b
- * @returns {boolean}
- */
-export const btree_compare = (a, b) => {}
-
-
-/**
- * @param {BinaryNode<number>} head
+ * @param {Binary_Node<number>} head
  * @param {number} needle
  * @returns {boolean}
  */
-export const btree_breadth_first_search = (head, needle) => {}
+export const btree_breadth_first = (head, needle) => { }
+
