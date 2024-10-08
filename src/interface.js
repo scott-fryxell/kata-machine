@@ -1,3 +1,4 @@
+
 /**
  * @typedef {Object} Point
  * @property {number} x

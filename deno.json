@@ -5,6 +5,9 @@
     "target": "esnext",
     "baseUrl": "src"
   },
+  "tasks": {
+    "generate": "deno run --allow-read --allow-write scripts/generate.js"
+  },
   "include": [
     "./src/**/*"
   ],

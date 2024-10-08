@@ -1,73 +1,52 @@
-import fs from "fs"
-import path from "path"
+import { ensureDir as ensure_dir, exists } from "https://deno.land/std/fs/mod.ts";
+import { join, dirname } from "https://deno.land/std/path/mod.ts";
 
-const src_path = path.join(__dirname, "..", "src");
-let day = 1;
+const interface_file = "src/interface.js";
+const output_dir = "src/generated";
 
-try {
-  day = +fs.readdirSync(src_path).
-    filter(i => i.includes("day")).
-    sort((a, b) => {
-      return +b.substring(3) - a.substring(3);
-    })[0].substring(3) + 1;
+/**
+ * @typedef {Object} ExportMap
+ * @property {string} [key: string]
+ */
 
-  if (isNaN(day)) {
-    console.log("day is nan");
-    day = 1;
+/**
+ * Extracts export statements from the given content.
+ * @param {string} content - The content to extract exports from.
+ * @returns {ExportMap} An object containing the extracted exports.
+ */
+function extract_exports(content) {
+  /** @type {ExportMap} */
+  const exports = {};
+  const export_regex = /export\s+(const|default\s+function|class)\s+(\w+)/g;
+  let match;
+
+  while ((match = export_regex.exec(content)) !== null) {
+    const name = match[2];
+    const start_index = match.index;
+    let end_index = content.indexOf("\n}", start_index);
+    if (end_index === -1) end_index = content.length;
+    exports[name] = content.slice(start_index, end_index + 2);
   }
-} catch (e) {
-  day = 1;
+
+  return exports;
 }
 
-const day_name = `day${day}`;
-const day_path = path.join(src_path, day_name);
-const relative_day_path = path.relative(process.cwd(), day_path);
-try { fs.unlinkSync(day_path); } catch (e) { }
-try { fs.mkdirSync(day_path); } catch (e) { }
+// Read the interface file
+const content = await Deno.readTextFile(interface_file);
 
-const generate_method = method => {
-  return `${method.name}(${method.args || ""}): ${method.return || "void"} {}`;
+
+// Ensure output directory exists
+await ensure_dir(output_dir);
+
+// Extract exports from the interface file
+const exports = extract_exports(content);
+
+// Generate files
+for (const [name, export_content] of Object.entries(exports)) {
+  const file_name = `${name}.js`;
+  const file_path = join(output_dir, file_name);
+  await Deno.writeTextFile(file_path, export_content);
+  console.log(`Generated ${file_path}`);
 }
 
-const generate_property = prop => {
-  return `${prop.scope} ${prop.name}: ${prop.type};`
-}
-
-const generate_getter = getter => {
-  return `get ${getter.name}(): ${getter.return} {
-    return this.${getter.prop_name};
-  }`
-}
-
-const create_class = (name, item) => {
-fs.writeFileSync(path.join(day_path, `${name}.js`), `export default class ${name}${item.generic || ""} {
-  ${(item.properties || []).map(generate_property).join("\n")}
-  ${(item.getters || []).map(generate_getter).join("\n")}
-  constructor() {}
-  ${(item.methods || []).map(generate_method).join("\n")}
-}`);
-}
-
-const create_function = (name, item) => {
-  const g = item.generic ? item.generic : "";
-  fs.writeFileSync(path.join(day_path, `${name}.js`), `export default function ${item.fn}${g}(${item.args}): ${item.return} {}`);
-}
-
-config.dsa.forEach(ds => {
-  const item = dsa[ds];
-  if (!item) {
-    throw new Error(`algorithm ${ds} could not be found`);
-  }
-  if (item.type === "class") {
-    create_class(ds, item);
-  } else {
-    create_function(ds, item);
-  }
-});
-
-const align = require("./align-configs");
-align.jest(day_name);
-align.ts_config(day_name);
-align.package_json(config, relative_day_path);
-align.stats(config, day_path);
-
+console.log('File generation complete!');
