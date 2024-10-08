@@ -1,9 +1,8 @@
-import ArrayList from "@/array-list"
+import ArrayList from "@/list-array"
 import { test_list } from "@@/list-test"
 
-
 /**
- * @typedef {import('@/array-list').default} ArrayList
+ * @typedef {import('@/types').default} ArrayList
  */
 test("array-list", () => {
   /** @type {ArrayList<number>} */
