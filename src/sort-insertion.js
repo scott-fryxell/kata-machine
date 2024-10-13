@@ -1,10 +1,8 @@
-
 /**
  * @param {number[]} arr
  * @returns {void}
  */
 export default function insertion_sort(arr) {
-
   for (let i = 1; i < arr.length; i++) {
     let current = arr[i];
     let j = i - 1;
@@ -16,7 +14,6 @@ export default function insertion_sort(arr) {
 
     arr[j + 1] = current;
   }
-
 }
 
 // Example usage
@@ -34,6 +31,5 @@ export default function insertion_sort(arr) {
 // The worst-case time complexity is O(n^2) when the array is sorted in reverse order.
 
 // The average-case time complexity is O(n^2) as well, since the number of comparisons and swaps is proportional to the number of inversions in the array.
-
 
 // Space Complexity:

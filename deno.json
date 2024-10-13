@@ -6,7 +6,7 @@
     "generate": "deno run --allow-read --allow-write scripts/generate.js"
   },
   "include": [
-    "./src/**/*"
+    "./src/active"
   ],
   "test": {
     "include": [
@@ -14,7 +14,7 @@
     ]
   },
   "imports": {
-    "@/": "./src/1/",
+    "@/": "./src/",
     "@@/": "./tests/"
   }
 }

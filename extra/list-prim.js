@@ -59,14 +59,19 @@ export default function prims(list) {
     // 4. we need to insert the edge from current to new into our mst, set visited, and remove the potential edge
     if (lowest_edge[1] !== null) {
       mst[lowest_edge[0]].push(lowest_edge[1]);
-      mst[lowest_edge[1].to].push({to: lowest_edge[0], weight: lowest_edge[1].weight});
+      mst[lowest_edge[1].to].push({
+        to: lowest_edge[0],
+        weight: lowest_edge[1].weight,
+      });
       visited[lowest_edge[1].to] = true;
-      edges.splice(edges.indexOf(/** @type {[number, GraphEdge]} */ (lowest_edge)), 1);
+      edges.splice(
+        edges.indexOf(/** @type {[number, GraphEdge]} */ (lowest_edge)),
+        1,
+      );
     }
 
     // 5. the newly selected node becomes the current node
     current = lowest_edge[1]?.to || -1;
-
   } while (visited.includes(false) && current >= 0);
 
   return mst;
@@ -83,7 +88,7 @@ if (require.main === module) {
       { to: 4, weight: 1 },
       { to: 3, weight: 3 },
     ],
-    [// 2
+    [ // 2
       { to: 0, weight: 1 },
       { to: 3, weight: 7 },
     ],
@@ -106,4 +111,3 @@ if (require.main === module) {
     ],
   ]);
 }
-

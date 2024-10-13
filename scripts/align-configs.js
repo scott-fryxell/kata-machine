@@ -1,7 +1,7 @@
-import fs from "fs"
-import path from "path"
+import fs from "fs";
+import path from "path";
 
-export const stats = config => {
+export const stats = (config) => {
   let stats;
   try {
     stats = require("../stats.json");
@@ -15,12 +15,13 @@ export const stats = config => {
     }
     acc[ds]++;
     return acc;
-  }, stats || {})
+  }, stats || {});
 
   fs.writeFileSync(
     path.join(__dirname, "..", "stats.json"),
-    JSON.stringify(stats, null, 4));
-}
+    JSON.stringify(stats, null, 4),
+  );
+};
 
 export const package_json = (config, day_path) => {
   const package_json = require("../package.json");
@@ -29,8 +30,9 @@ export const package_json = (config, day_path) => {
 
   fs.writeFileSync(
     path.join(__dirname, "..", "package.json"),
-    JSON.stringify(package_json, null, 4));
-}
+    JSON.stringify(package_json, null, 4),
+  );
+};
 
 module.exports.jest = function (set_to) {
   const jest = require("../.jest.config.json");
@@ -38,6 +40,6 @@ module.exports.jest = function (set_to) {
 
   fs.writeFileSync(
     path.join(__dirname, "..", ".jest.config.json"),
-    JSON.stringify(jest, null, 4));
-}
-
+    JSON.stringify(jest, null, 4),
+  );
+};

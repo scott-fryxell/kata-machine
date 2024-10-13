@@ -7,7 +7,7 @@
  * @returns {void}
  */
 export function add_node_list(list, from, to, weight) {
-  let l = list[from]
-  if (!l) l = list[from] = []
-  l.push({ to, weight })
+  let l = list[from];
+  if (!l) l = list[from] = [];
+  l.push({ to, weight });
 }

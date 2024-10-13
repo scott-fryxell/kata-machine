@@ -1,5 +1,5 @@
-import ArrayList from "@/list-array"
-import { test_list } from "@@/list-test"
+import ArrayList from "@/list-array";
+import { test_list } from "@@/list-test";
 
 /**
  * @typedef {import('@/types').default} ArrayList
