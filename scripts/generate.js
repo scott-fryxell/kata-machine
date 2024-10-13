@@ -32,7 +32,7 @@ const extract_exports = (content) => {
 let date = new Date()
 await ensure_dir('completed')
 await ensure_dir('src')
-await Deno.rename("src", `completed/${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`)
+await Deno.rename("src", `completed/${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`)
 await ensure_dir('src')
 
 const content = await Deno.readTextFile('interface.js');
@@ -42,7 +42,7 @@ for (const [name, export_content] of Object.entries(exports)) {
   const file_name = `${name}.js`
   const file_path = join('src', file_name)
   await Deno.writeTextFile(file_path, export_content)
-  console.log(`Generated ${file_path}`)
+  console.log(file_path)
 }
 
 console.log("File generation complete.")
