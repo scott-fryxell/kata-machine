@@ -1,3 +1,5 @@
+// https://claude.ai/chat/07845e1e-2c16-47f8-9020-4ccf8aca020f
+
 /**
  * @typedef {Object} Edge
  * @property {number} node - The destination node
@@ -29,7 +31,7 @@ function dijkstra_shortest_path(graph, start, end) {
 
     while (nodes.size > 0) {
         // Find the node with the smallest distance
-        let current = Array.from(nodes).reduce((min_node, node) => 
+        let current = Array.from(nodes).reduce((min_node, node) =>
             distances[node] < distances[min_node] ? node : min_node
         );
 

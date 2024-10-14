@@ -1,3 +1,5 @@
+// https://claude.ai/chat/07845e1e-2c16-47f8-9020-4ccf8aca020f
+
 /**
  * @typedef {Object} Edge
  * @property {number} node - The destination node
