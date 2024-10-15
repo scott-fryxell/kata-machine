@@ -1,5 +1,5 @@
-import bt_in_order from '@code/BTInOrder';
-import { tree } from './tree';
+import bt_in_order from '@code/BTInOrder'
+import { tree } from './tree'
 
 test('In order', function () {
   expect(bt_in_order(tree)).toEqual([
@@ -13,5 +13,5 @@ test('In order', function () {
     45,
     50,
     100,
-  ]);
-});
+  ])
+})

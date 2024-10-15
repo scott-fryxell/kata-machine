@@ -1,5 +1,5 @@
-import bfs from '@/BFSGraphList';
-import { list2 } from '@@/graph';
+import bfs from '@/BFSGraphList'
+import { list2 } from '@@/graph'
 
 test('bfs - graph', function () {
   expect(bfs(list2, 0, 6)).toEqual([
@@ -8,7 +8,7 @@ test('bfs - graph', function () {
     4,
     5,
     6,
-  ]);
+  ])
 
-  expect(bfs(list2, 6, 0)).toEqual(null);
-});
+  expect(bfs(list2, 6, 0)).toEqual(null)
+})

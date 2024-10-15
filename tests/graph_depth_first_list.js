@@ -1,5 +1,5 @@
-import dfs from '@code/DFSGraphList';
-import { list2 } from './graph';
+import dfs from '@code/DFSGraphList'
+import { list2 } from './graph'
 
 test('dfs - graph', function () {
   expect(dfs(list2, 0, 6)).toEqual([
@@ -8,7 +8,7 @@ test('dfs - graph', function () {
     4,
     5,
     6,
-  ]);
+  ])
 
-  expect(dfs(list2, 6, 0)).toEqual(null);
-});
+  expect(dfs(list2, 6, 0)).toEqual(null)
+})

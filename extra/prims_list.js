@@ -28,53 +28,53 @@
  */
 export default function prims(list) {
   /** @type {boolean[]} */
-  const visited = new Array(list.length).fill(false);
+  const visited = new Array(list.length).fill(false)
   /** @type {GraphEdge[][]} */
-  const mst = new Array(list.length).fill(null).map(() => []);
+  const mst = new Array(list.length).fill(null).map(() => [])
 
   // 1.
-  visited[0] = true;
-  let current = 0;
+  visited[0] = true
+  let current = 0
 
   /** @type {[number, GraphEdge][]} */
-  const edges = [];
+  const edges = []
 
   do {
     // 2. put all dem edges in the list
     for (const edge_me_daddy of list[current]) {
-      edges.push([current, edge_me_daddy]);
+      edges.push([current, edge_me_daddy])
     }
 
     // 3. select edge that is the lowest value and to a node we haven't seen yet
-    let lowest = Infinity;
+    let lowest = Infinity
     /** @type {[number, GraphEdge | null]} */
-    let lowest_edge = [-1, null];
+    let lowest_edge = [-1, null]
     for (const edge of edges) {
       if (visited[edge[1].to] === false && edge[1].weight < lowest) {
-        lowest = edge[1].weight;
-        lowest_edge = edge;
+        lowest = edge[1].weight
+        lowest_edge = edge
       }
     }
 
     // 4. we need to insert the edge from current to new into our mst, set visited, and remove the potential edge
     if (lowest_edge[1] !== null) {
-      mst[lowest_edge[0]].push(lowest_edge[1]);
+      mst[lowest_edge[0]].push(lowest_edge[1])
       mst[lowest_edge[1].to].push({
         to: lowest_edge[0],
         weight: lowest_edge[1].weight,
-      });
-      visited[lowest_edge[1].to] = true;
+      })
+      visited[lowest_edge[1].to] = true
       edges.splice(
         edges.indexOf(/** @type {[number, GraphEdge]} */ (lowest_edge)),
         1,
-      );
+      )
     }
 
     // 5. the newly selected node becomes the current node
-    current = lowest_edge[1]?.to || -1;
-  } while (visited.includes(false) && current >= 0);
+    current = lowest_edge[1]?.to || -1
+  } while (visited.includes(false) && current >= 0)
 
-  return mst;
+  return mst
 }
 
 if (require.main === module) {
@@ -109,5 +109,5 @@ if (require.main === module) {
       { to: 5, weight: 1 },
       { to: 3, weight: 1 },
     ],
-  ]);
+  ])
 }

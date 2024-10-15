@@ -1,5 +1,5 @@
-import bt_post_order from '@code/BTPostOrder';
-import { tree } from './tree';
+import bt_post_order from '@code/BTPostOrder'
+import { tree } from './tree'
 
 test('post order', function () {
   expect(bt_post_order(tree)).toEqual([
@@ -13,5 +13,5 @@ test('post order', function () {
     100,
     50,
     20,
-  ]);
-});
+  ])
+})

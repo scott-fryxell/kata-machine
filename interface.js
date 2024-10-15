@@ -52,7 +52,7 @@
  */
 
 /** @typedef {number[][]} Adjacency_List */
-/** @typedef {number[][]} Adjacency_Matrix */ s;
+/** @typedef {number[][]} Adjacency_Matrix */
 /** @typedef {Graph_Edge[][]} Weighted_Adjacency_List */
 /** @typedef {number[][]} Weighted_Adjacency_Matrix */
 
@@ -86,33 +86,33 @@
  * @param {boolean[]} breaks - An array of boolean values representing whether the ball breaks at each floor.
  * @returns {number} The index where the ball first breaks, or -1 if it never breaks.
  */
-export const two_crystal_balls = (breaks) => {};
+export const two_crystal_balls = (breaks) => {}
 
 /**
  * @param {number[]} haystack
  * @param {number} needle
  * @returns {boolean}
  */
-export const linear_search = (haystack, needle) => {};
+export const linear_search = (haystack, needle) => {}
 
 /**
  * @param {number[]} haystack - The sorted array to search in
  * @param {number} needle - The value to search for
  * @returns {boolean} - True if the needle is found, false otherwise
  */
-export const binary_search = (haystack, needle) => {};
+export const binary_search = (haystack, needle) => {}
 
 /**
  * @param {number[]} arr
  * @returns {void}
  */
-export const quick_sort = (arr) => {};
+export const quick_sort = (arr) => {}
 
 /**
  * @param {number[]} arr
  * @returns {void}
  */
-export const merge_sort = (arr) => {};
+export const merge_sort = (arr) => {}
 
 /**
  * Performs an insertion sort on the given array.
@@ -144,7 +144,7 @@ export const insertion_sort = (arr) => {
    * insertion_sort(array)
    * console.log("Sorted array:", array) // [11, 12, 22, 25, 35, 64, 90]
    */
-};
+}
 
 /**
  * @description
@@ -160,7 +160,7 @@ export const insertion_sort = (arr) => {
  * @param {number[]} arr
  * @returns {void}
  */
-export const bubble_sort = (arr) => {};
+export const bubble_sort = (arr) => {}
 
 /**
  * @param {string[]} maze
@@ -169,7 +169,7 @@ export const bubble_sort = (arr) => {};
  * @param {Point} end
  * @returns {Point[]}
  */
-export const maze_solver = (maze, wall, start, end) => {};
+export const maze_solver = (maze, wall, start, end) => {}
 
 /**
  * @template T
@@ -179,19 +179,19 @@ export const Queue = class {
    * @private
    * @type {number}
    */
-  length;
+  length
 
   /**
    * @private
    * @type {Queue_Node<T> | undefined}
    */
-  head;
+  head
 
   /**
    * @private
    * @type {Queue_Node<T> | undefined}
    */
-  tail;
+  tail
 
   constructor() {}
 
@@ -212,7 +212,7 @@ export const Queue = class {
    * @returns {T | undefined}
    */
   peek() {}
-};
+}
 
 /**
  * @template T
@@ -222,13 +222,13 @@ export const Stack = class {
    * @type {number}
    * @private
    */
-  length;
+  length
 
   /**
    * @type {Stack_Node<T> | undefined}
    * @private
    */
-  head;
+  head
 
   constructor() {}
 
@@ -247,7 +247,7 @@ export const Stack = class {
    * @returns {T | undefined}
    */
   peek() {}
-};
+}
 
 /**
  * @template T
@@ -257,7 +257,7 @@ export const Singly_Linked_List = class {
    * @type {number}
    * @private
    */
-  length;
+  length
   constructor() {}
 
   /**
@@ -296,7 +296,7 @@ export const Singly_Linked_List = class {
    * @returns {T | undefined}
    */
   remove_at(idx) {}
-};
+}
 
 /**
  * @template T
@@ -306,7 +306,7 @@ export default class Doubly_Linked_List {
    * @type {number}
    * @private
    */
-  length;
+  length
 
   constructor() {}
 
@@ -357,7 +357,7 @@ export const Array_List = class {
    * @type {number}
    * @private
    */
-  length;
+  length
   constructor() {}
 
   /**
@@ -396,7 +396,7 @@ export const Array_List = class {
    * @returns {T|undefined}
    */
   remove_at(idx) {}
-};
+}
 /**
  * @template T
  */
@@ -405,7 +405,7 @@ export const Ring_Buffer = class {
    * @type {number}
    * @private
    */
-  length;
+  length
 
   /**
    * @param {number} initial_size
@@ -465,7 +465,7 @@ export const Ring_Buffer = class {
    * @returns {T | undefined}
    */
   remove_at(idx) {}
-};
+}
 
 // other data structures
 
@@ -477,7 +477,7 @@ export const Min_Heap = class {
    * @type {number}
    * @private
    */
-  length;
+  length
   constructor() {}
   /**
    * @param {number} value
@@ -488,7 +488,7 @@ export const Min_Heap = class {
    * @returns {number}
    */
   delete() {}
-};
+}
 
 /**
  * Represents a Trie data structure.
@@ -515,7 +515,7 @@ export const Trie = class {
    * @returns {string[]} An array of matching items.
    */
   find(partial) {}
-};
+}
 
 /**
  * @template {string | number} T
@@ -547,7 +547,7 @@ export const Map = class {
    * @returns {number}
    */
   size() {}
-};
+}
 
 /**
  * @template K, V
@@ -558,7 +558,7 @@ export const Least_Recently_Used = class {
    * @private
    * @type {number}
    */
-  length;
+  length
   constructor() {}
 
   /**
@@ -573,7 +573,7 @@ export const Least_Recently_Used = class {
    * @returns {V | undefined}
    */
   get(key) {}
-};
+}
 
 /**
  * @param {Weighted_Adjacency_List} list - The weighted adjacency list.
@@ -582,7 +582,7 @@ export const Least_Recently_Used = class {
  * @param {number} weight - The weight of the edge.
  * @returns {void}
  */
-export const graph_add_node_list = (list, from, to, weight) => {};
+export const graph_add_node_list = (list, from, to, weight) => {}
 
 /**
  * @param {Weighted_Adjacency_Matrix} graph
@@ -590,7 +590,7 @@ export const graph_add_node_list = (list, from, to, weight) => {};
  * @param {number} needle
  * @returns {number[]|null}
  */
-export const graph_breadth_first_matrix = (graph, source, needle) => {};
+export const graph_breadth_first_matrix = (graph, source, needle) => {}
 
 /**
  * @param {Weighted_Adjacency_List} graph
@@ -598,7 +598,7 @@ export const graph_breadth_first_matrix = (graph, source, needle) => {};
  * @param {number} needle
  * @returns {number[] | null}
  */
-export const graph_depth_first_list = (graph, source, needle) => {};
+export const graph_depth_first_list = (graph, source, needle) => {}
 
 /**
  * @param {Weighted_Adjacency_Matrix} graph
@@ -606,43 +606,43 @@ export const graph_depth_first_list = (graph, source, needle) => {};
  * @param {number} needle
  * @returns {number[] | null}
  */
-export const graph_depth_first_matrix = (graph, source, needle) => {};
+export const graph_depth_first_matrix = (graph, source, needle) => {}
 
 /**
  * @param {Binary_Node<number> | null} a
  * @param {Binary_Node<number> | null} b
  * @returns {boolean}
  */
-export const btree_compare = (a, b) => {};
+export const btree_compare = (a, b) => {}
 
 /**
  * @param {Binary_Node<number>} head
  * @returns {number[]}
  */
-export const btree_pre_order = (head) => {};
+export const btree_pre_order = (head) => {}
 
 /**
  * @param {Binary_Node<number>} head
  * @returns {number[]}
  */
-export const btree_post_order = (head) => {};
+export const btree_post_order = (head) => {}
 
 /**
  * @param {Binary_Node<number>} head
  * @returns {number[]}
  */
-export const btree_in_order = (head) => {};
+export const btree_in_order = (head) => {}
 
 /**
  * @param {Binary_Node<number>} head
  * @param {number} needle
  * @returns {boolean}
  */
-export const btree_depth_first = (head, needle) => {};
+export const btree_depth_first = (head, needle) => {}
 
 /**
  * @param {Binary_Node<number>} head
  * @param {number} needle
  * @returns {boolean}
  */
-export const btree_breadth_first = (head, needle) => {};
+export const btree_breadth_first = (head, needle) => {}
