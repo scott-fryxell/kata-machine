@@ -1,6 +1,6 @@
-import two_crystal_balls from "@code/TwoCrystalBalls";
+import two_crystal_balls from '@code/TwoCrystalBalls';
 
-test("two crystal balls", function () {
+test('two crystal balls', function () {
   let idx = Math.floor(Math.random() * 10000);
   const data = new Array(10000).fill(false);
 

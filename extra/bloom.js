@@ -1,9 +1,8 @@
 /**
-* @class Bloom_Filter
-* @description A simple Bloom filter implementation
-*/
+ * @class Bloom_Filter
+ * @description A simple Bloom filter implementation
+ */
 class Bloom_Filter {
-
   /**
    * @param {number} size - The size of the bit array
    * @param {number} num_hash_functions - The number of hash functions to use
@@ -30,7 +29,7 @@ class Bloom_Filter {
    */
   might_contain(item) {
     const hashes = this.get_hash_values(item);
-    return hashes.every(hash => this.bit_array[hash]);
+    return hashes.every((hash) => this.bit_array[hash]);
   }
 
   /**
@@ -63,10 +62,10 @@ class Bloom_Filter {
 // Example usage
 const bloom_filter = new Bloom_Filter(1000, 3);
 
-bloom_filter.add("apple");
-bloom_filter.add("banana");
-bloom_filter.add("cherry");
+bloom_filter.add('apple');
+bloom_filter.add('banana');
+bloom_filter.add('cherry');
 
-console.log(bloom_filter.might_contain("apple"));   // true
-console.log(bloom_filter.might_contain("banana"));  // true
-console.log(bloom_filter.might_contain("date"));    // false (probably)
+console.log(bloom_filter.might_contain('apple')); // true
+console.log(bloom_filter.might_contain('banana')); // true
+console.log(bloom_filter.might_contain('date')); // false (probably)

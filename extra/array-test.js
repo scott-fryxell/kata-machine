@@ -81,35 +81,35 @@ const unshift_arr = (count) => () => unshift(count);
 const shift_arr = (count) => () => shift(count);
 
 const tests = [10, 100, 1000, 10000, 100000, 1_000_000, 10_000_000];
-console.log("Testing get");
+console.log('Testing get');
 tests.forEach((t) => {
   a.length = 0;
   push(t);
   console.log(t, time(get(t - 1)));
 });
 
-console.log("push");
+console.log('push');
 tests.forEach((t) => {
   a.length = 0;
   push(t);
   console.log(t, time(push_arr(1000)));
 });
 
-console.log("pop");
+console.log('pop');
 tests.forEach((t) => {
   a.length = 0;
   push(t);
   console.log(t, time(pop_arr(1000)));
 });
 
-console.log("unshift");
+console.log('unshift');
 tests.forEach((t) => {
   a.length = 0;
   push(t);
   console.log(t, time(unshift_arr(1000)));
 });
 
-console.log("shift");
+console.log('shift');
 tests.forEach((t) => {
   a.length = 0;
   push(t);
