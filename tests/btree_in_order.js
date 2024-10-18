@@ -1,7 +1,7 @@
-import bt_in_order from '@code/BTInOrder'
-import { tree } from './tree'
+import bt_in_order from '@/btree_in_order.js'
+import { tree } from '@@/tree'
 
-test('In order', function () {
+test('In order', () => {
   expect(bt_in_order(tree)).toEqual([
     5,
     7,

@@ -1,7 +1,7 @@
-import bt_post_order from '@code/BTPostOrder'
-import { tree } from './tree'
+import bt_post_order from '@/btree_post_order.js'
+import { tree } from '@@/tree'
 
-test('post order', function () {
+test('post order', () => {
   expect(bt_post_order(tree)).toEqual([
     7,
     5,

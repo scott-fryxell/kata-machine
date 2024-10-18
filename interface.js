@@ -86,33 +86,33 @@
  * @param {boolean[]} breaks - An array of boolean values representing whether the ball breaks at each floor.
  * @returns {number} The index where the ball first breaks, or -1 if it never breaks.
  */
-export const two_crystal_balls = (breaks) => {}
+export const two_crystal_balls = (breaks) => { }
 
 /**
  * @param {number[]} haystack
  * @param {number} needle
  * @returns {boolean}
  */
-export const linear_search = (haystack, needle) => {}
+export const linear_search = (haystack, needle) => { }
 
 /**
  * @param {number[]} haystack - The sorted array to search in
  * @param {number} needle - The value to search for
  * @returns {boolean} - True if the needle is found, false otherwise
  */
-export const binary_search = (haystack, needle) => {}
+export const binary_search = (haystack, needle) => { }
 
 /**
  * @param {number[]} arr
  * @returns {void}
  */
-export const quick_sort = (arr) => {}
+export const quick_sort = (arr) => { }
 
 /**
  * @param {number[]} arr
  * @returns {void}
  */
-export const merge_sort = (arr) => {}
+export const merge_sort = (arr) => { }
 
 /**
  * Performs an insertion sort on the given array.
@@ -160,7 +160,7 @@ export const insertion_sort = (arr) => {
  * @param {number[]} arr
  * @returns {void}
  */
-export const bubble_sort = (arr) => {}
+export const bubble_sort = (arr) => { }
 
 /**
  * @param {string[]} maze
@@ -169,7 +169,7 @@ export const bubble_sort = (arr) => {}
  * @param {Point} end
  * @returns {Point[]}
  */
-export const maze_solver = (maze, wall, start, end) => {}
+export const maze_solver = (maze, wall, start, end) => { }
 
 /**
  * @template T
@@ -193,25 +193,25 @@ export const Queue = class {
    */
   tail
 
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  enqueue(item) {}
+  enqueue(item) { }
 
   // first update head to point to the next value
   // then return out previous head
   /**
    * @returns {T | undefined}
    */
-  deque() {}
+  deque() { }
 
   /**
    * @returns {T | undefined}
    */
-  peek() {}
+  peek() { }
 }
 
 /**
@@ -230,23 +230,23 @@ export const Stack = class {
    */
   head
 
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  push(item) {}
+  push(item) { }
 
   /**
    * @returns {T | undefined}
    */
-  pop() {}
+  pop() { }
 
   /**
    * @returns {T | undefined}
    */
-  peek() {}
+  peek() { }
 }
 
 /**
@@ -258,44 +258,44 @@ export const Singly_Linked_List = class {
    * @private
    */
   length
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  prepend(item) {}
+  prepend(item) { }
 
   /**
    * @param {T} item
    * @param {number} idx
    * @returns {void}
    */
-  insert_at(item, idx) {}
+  insert_at(item, idx) { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  append(item) {}
+  append(item) { }
 
   /**
    * @param {T} item
    * @returns {T | undefined}
    */
-  remove(item) {}
+  remove(item) { }
 
   /**
    * @param {number} idx
    * @returns {T | undefined}
    */
-  get(idx) {}
+  get(idx) { }
 
   /**
    * @param {number} idx
    * @returns {T | undefined}
    */
-  remove_at(idx) {}
+  remove_at(idx) { }
 }
 
 /**
@@ -308,38 +308,38 @@ export default class Doubly_Linked_List {
    */
   length
 
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  prepend(item) {}
+  prepend(item) { }
 
   /**
    * @param {T} item
    * @param {number} idx
    * @returns {void}
    */
-  insert_at(item, idx) {}
+  insert_at(item, idx) { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  append(item) {}
+  append(item) { }
 
   /**
    * @param {T} item
    * @returns {T | undefined}
    */
-  remove(item) {}
+  remove(item) { }
 
   /**
    * @param {number} idx
    * @returns {T | undefined}
    */
-  get(idx) {}
+  get(idx) { }
 
   /**
    * @param {number} idx
@@ -358,44 +358,44 @@ export const Array_List = class {
    * @private
    */
   length
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {number} item
    * @returns {void}
    */
-  prepend(item) {}
+  prepend(item) { }
 
   /**
    * @param {T} item
    * @param {number} idx
    * @returns {void}
    */
-  insert_at(item, idx) {}
+  insert_at(item, idx) { }
 
   /**
    * @param {T} item
    * @returns {void}
    */
-  append(item) {}
+  append(item) { }
 
   /**
    * @param {T} item
    * @returns {T|undefined}
    */
-  remove(item) {}
+  remove(item) { }
 
   /**
    * @param {number} idx
    * @returns {T|undefined}
    */
-  get(idx) {}
+  get(idx) { }
 
   /**
    * @param {number} idx
    * @returns {T|undefined}
    */
-  remove_at(idx) {}
+  remove_at(idx) { }
 }
 /**
  * @template T
@@ -410,41 +410,41 @@ export const Ring_Buffer = class {
   /**
    * @param {number} initial_size
    */
-  constructor(initial_size) {}
+  constructor(initial_size) { }
 
   /**
    * Shift an item to the beginning of the buffer
    * @param {T} item
    * @returns {void}
    */
-  shift(item) {}
+  shift(item) { }
 
   /**
    * Remove from the beginning of the buffer
    * @param {T} item
    * @returns {void}
    */
-  unshift(item) {}
+  unshift(item) { }
 
   /**
    * Add an item to the end of the buffer
    * @param {T} item
    * @returns {void}
    */
-  push(item) {}
+  push(item) { }
 
   /**
    * @param {T} item
    * @returns {T | undefined}
    */
-  pop(item) {}
+  pop(item) { }
 
   /**
    * Get an item from anywhere in the buffer
    * @param {number} idx
    * @returns {T | undefined}
    */
-  get(idx) {}
+  get(idx) { }
 
   /** These next two methods will have the worst performance
    * as they will require shifting all the elements in the buffer
@@ -456,7 +456,7 @@ export const Ring_Buffer = class {
    * @param {number} idx
    * @returns {void}
    */
-  insert_at(item, idx) {}
+  insert_at(item, idx) { }
 
   /**
    * Remove an item from anywhere in the buffer
@@ -464,7 +464,7 @@ export const Ring_Buffer = class {
    * @param {number} idx
    * @returns {T | undefined}
    */
-  remove_at(idx) {}
+  remove_at(idx) { }
 }
 
 // other data structures
@@ -478,43 +478,43 @@ export const Min_Heap = class {
    * @private
    */
   length
-  constructor() {}
+  constructor() { }
   /**
    * @param {number} value
    * @returns {void}
    */
-  insert(value) {}
+  insert(value) { }
   /**
    * @returns {number}
    */
-  delete() {}
+  delete() { }
 }
 
 /**
  * Represents a Trie data structure.
  */
 export const Trie = class {
-  constructor() {}
+  constructor() { }
   /**
    * Inserts an item into the Trie.
    * @param {string} item - The item to insert.
    * @returns {void}
    */
-  insert(item) {}
+  insert(item) { }
 
   /**
    * Deletes an item from the Trie.
    * @param {string} item - The item to delete.
    * @returns {void}
    */
-  delete(item) {}
+  delete(item) { }
 
   /**
    * Finds all items in the Trie that start with the given partial string.
    * @param {string} partial - The partial string to search for.
    * @returns {string[]} An array of matching items.
    */
-  find(partial) {}
+  find(partial) { }
 }
 
 /**
@@ -522,31 +522,31 @@ export const Trie = class {
  * @template V
  */
 export const Map = class {
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {T} key
    * @returns {V | undefined}
    */
-  get(key) {}
+  get(key) { }
 
   /**
    * @param {T} key
    * @param {V} value
    * @returns {void}
    */
-  set(key, value) {}
+  set(key, value) { }
 
   /**
    * @param {T} key
    * @returns {V | undefined}
    */
-  delete(key) {}
+  delete(key) { }
 
   /**
    * @returns {number}
    */
-  size() {}
+  size() { }
 }
 
 /**
@@ -559,20 +559,20 @@ export const Least_Recently_Used = class {
    * @type {number}
    */
   length
-  constructor() {}
+  constructor() { }
 
   /**
    * @param {K} key
    * @param {V} value
    * @returns {void}
    */
-  update(key, value) {}
+  update(key, value) { }
 
   /**
    * @param {K} key
    * @returns {V | undefined}
    */
-  get(key) {}
+  get(key) { }
 }
 
 /**
@@ -582,7 +582,7 @@ export const Least_Recently_Used = class {
  * @param {number} weight - The weight of the edge.
  * @returns {void}
  */
-export const graph_add_node_list = (list, from, to, weight) => {}
+export const graph_add_node_list = (list, from, to, weight) => { }
 
 /**
  * @param {Weighted_Adjacency_Matrix} graph
@@ -590,7 +590,7 @@ export const graph_add_node_list = (list, from, to, weight) => {}
  * @param {number} needle
  * @returns {number[]|null}
  */
-export const graph_breadth_first_matrix = (graph, source, needle) => {}
+export const graph_breadth_first_matrix = (graph, source, needle) => { }
 
 /**
  * @param {Weighted_Adjacency_List} graph
@@ -598,7 +598,7 @@ export const graph_breadth_first_matrix = (graph, source, needle) => {}
  * @param {number} needle
  * @returns {number[] | null}
  */
-export const graph_depth_first_list = (graph, source, needle) => {}
+export const graph_depth_first_list = (graph, source, needle) => { }
 
 /**
  * @param {Weighted_Adjacency_Matrix} graph
@@ -606,43 +606,43 @@ export const graph_depth_first_list = (graph, source, needle) => {}
  * @param {number} needle
  * @returns {number[] | null}
  */
-export const graph_depth_first_matrix = (graph, source, needle) => {}
+export const graph_depth_first_matrix = (graph, source, needle) => { }
 
 /**
  * @param {Binary_Node<number> | null} a
  * @param {Binary_Node<number> | null} b
  * @returns {boolean}
  */
-export const btree_compare = (a, b) => {}
+export const btree_compare = (a, b) => { }
 
 /**
  * @param {Binary_Node<number>} head
  * @returns {number[]}
  */
-export const btree_pre_order = (head) => {}
+export const btree_pre_order = (head) => { }
 
 /**
  * @param {Binary_Node<number>} head
  * @returns {number[]}
  */
-export const btree_post_order = (head) => {}
+export const btree_post_order = (head) => { }
 
 /**
  * @param {Binary_Node<number>} head
  * @returns {number[]}
  */
-export const btree_in_order = (head) => {}
+export const btree_in_order = (head) => { }
 
 /**
  * @param {Binary_Node<number>} head
  * @param {number} needle
  * @returns {boolean}
  */
-export const btree_depth_first = (head, needle) => {}
+export const btree_depth_first = (head, needle) => { }
 
 /**
  * @param {Binary_Node<number>} head
  * @param {number} needle
  * @returns {boolean}
  */
-export const btree_breadth_first = (head, needle) => {}
+export const btree_breadth_first = (head, needle) => { }

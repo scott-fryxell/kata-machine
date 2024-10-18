@@ -1,7 +1,7 @@
-import bt_pre_order from '@code/BTPreOrder'
-import { tree } from './tree'
+import bt_pre_order from '@/btree_pre_order.js'
+import { tree } from '@@/tree'
 
-test('Pre order', function () {
+test('Pre order', () => {
   expect(bt_pre_order(tree)).toEqual([
     20,
     10,

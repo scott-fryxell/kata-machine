@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "checkJs": true
   },
   "tasks": {
     "generate": "deno run --allow-read --allow-write scripts/generate.js"
