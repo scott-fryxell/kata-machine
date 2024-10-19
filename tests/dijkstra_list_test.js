@@ -1,4 +1,4 @@
-import dijkstra_list from '@/list-dijkstra'
+import dijkstra_list from '@/lists/dijkstra'
 import { list1 } from '@@/graph'
 
 test('dijkstra via adj list', function () {
