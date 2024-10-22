@@ -1,3 +1,88 @@
+import prims from '@code/PrimsAlgorithm'
+import dfs_list from '@code/DFSGraphList'
+import bfs_matrix from '@code/BFSGraphMatrix'
+import bfs_list from '@/BFSGraphList'
+
+
+test('bfs - graph', function () {
+  expect(bfs_list(list2, 0, 6)).toEqual([
+    0,
+    1,
+    4,
+    5,
+    6,
+  ])
+
+  expect(bfs_list(list2, 6, 0)).toEqual(null)
+})
+
+
+test('bfs - graph matrix', function () {
+  expect(bfs_matrix(matrix2, 0, 6)).toEqual([
+    0,
+    1,
+    4,
+    5,
+    6,
+  ])
+
+  expect(bfs_matrix(matrix2, 6, 0)).toEqual(null)
+})
+
+
+test('dfs - graph', function () {
+  expect(dfs_list(list2, 0, 6)).toEqual([
+    0,
+    1,
+    4,
+    5,
+    6,
+  ])
+
+  expect(dfs_list(list2, 6, 0)).toEqual(null)
+})
+
+
+test('PrimsAlgorithm', function () {
+  // there is only one right answer for this graph
+  expect(prims(list1)).toEqual([
+    [
+      { to: 2, weight: 1 },
+      { to: 1, weight: 3 },
+    ],
+    [
+      { to: 0, weight: 3 },
+      { to: 4, weight: 1 },
+    ],
+    [{ to: 0, weight: 1 }],
+    [{ to: 6, weight: 1 }],
+    [
+      { to: 1, weight: 1 },
+      { to: 5, weight: 2 },
+    ],
+    [
+      { to: 4, weight: 2 },
+      { to: 6, weight: 1 },
+    ],
+    [
+      { to: 5, weight: 1 },
+      { to: 3, weight: 1 },
+    ],
+  ])
+})
+
+import dijkstra_list from '@/lists/dijkstra'
+import { list1 } from '@@/graph'
+
+test('dijkstra via adj list', function () {
+  /// waht?
+  // what..
+  // what...
+  expect(dijkstra_list(0, 6, list1)).toEqual([0, 1, 4, 5, 6])
+})
+
+
+
 export const list1: WeightedAdjacencyList = [];
 
 //      (1) --- (4) ---- (5)
@@ -84,3 +169,4 @@ export const matrix2: WeightedAdjacencyMatrix = [
     [0, 0, 18, 0, 0, 0, 1],
     [0, 0, 0,  1, 0, 0, 1],
 ];
+
