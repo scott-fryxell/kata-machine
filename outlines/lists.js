@@ -137,7 +137,6 @@ export const Stack = class {
 export const Singly_Linked_List = class {
   /**
    * @type {number}
-   * @private
    */
   length
 
@@ -206,7 +205,6 @@ export const Singly_Linked_List = class {
 export const Doubly_Linked_List = class {
   /**
    * @type {number}
-   * @private
    */
   length
 
@@ -275,21 +273,12 @@ export const Doubly_Linked_List = class {
 export const Array_List = class {
   /**
    * @type {number}
-   * @private
    */
   length
 
   constructor() {
     this.length = 0
     console.log(this.length)
-  }
-
-  /**
-   * @param {number} item
-   * @returns {void}
-   */
-  prepend(item) {
-    console.log(item)
   }
 
   /**
@@ -300,6 +289,16 @@ export const Array_List = class {
   insert_at(item, idx) {
     console.log(item, idx)
   }
+
+
+  /**
+   * @param {T} item
+   * @returns {void}
+   */
+  prepend(item) {
+    console.log(item)
+  }
+
 
   /**
    * @param {T} item
@@ -340,7 +339,6 @@ export const Array_List = class {
 
 /**
  * @template T
- * @implements {List<T>}
  */
 export const Ring_Buffer = class {
   /**

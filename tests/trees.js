@@ -1,3 +1,8 @@
+import { describe, it } from "jsr:@std/testing/bdd"
+import { expect } from "jsr:@std/expect"
+
+import MinHeap from '@/MinHeap'
+import Trie from '@/Trie'
 import bfs from '@/btree_breadth_first.js'
 import compare from '@/btree_compare.js'
 import bt_pre_order from '@/btree_pre_order.js'
@@ -5,14 +10,14 @@ import bt_post_order from '@/btree_post_order.js'
 import bt_in_order from '@/btree_in_order.js'
 import dfs from '@/btree_depth_first.js'
 
-test('DFS on BST', () => {
+it('DFS on BST', () => {
   expect(dfs(tree, 45)).toEqual(true)
   expect(dfs(tree, 7)).toEqual(true)
   expect(dfs(tree, 69)).toEqual(false)
 })
 
 
-test('In order', () => {
+it('In order', () => {
   expect(bt_in_order(tree)).toEqual([
     5,
     7,
@@ -28,7 +33,7 @@ test('In order', () => {
 })
 
 
-test('post order', () => {
+it('post order', () => {
   expect(bt_post_order(tree)).toEqual([
     7,
     5,
@@ -43,7 +48,7 @@ test('post order', () => {
   ])
 })
 
-test('Pre order', () => {
+it('Pre order', () => {
   expect(bt_pre_order(tree)).toEqual([
     20,
     10,
@@ -59,20 +64,19 @@ test('Pre order', () => {
 })
 
 
-test('bt bfs', () => {
+it('bt bfs', () => {
   expect(bfs(tree, 45)).toEqual(true)
   expect(bfs(tree, 7)).toEqual(true)
   expect(bfs(tree, 69)).toEqual(false)
 })
-test('Compare Binary Trees', () => {
+it('Compare Binary Trees', () => {
   expect(compare(tree, tree)).toEqual(true)
   expect(compare(tree, tree2)).toEqual(false)
 })
 
 
-import Trie from '@code/Trie'
 
-test('Trie', function () {
+it('Trie', function () {
   const trie = new Trie()
   trie.insert('foo')
   trie.insert('fool')
@@ -93,9 +97,8 @@ test('Trie', function () {
   ])
 })
 
-import MinHeap from '@code/MinHeap'
 
-test('min heap', function () {
+it('min heap', function () {
   const heap = new MinHeap()
 
   expect(heap.length).toEqual(0)
@@ -162,7 +165,7 @@ export const tree: BinaryNode<number> = {
           left: null,
       }
   }
-};
+}
 export const tree2: BinaryNode<number> = {
   value: 20,
   right: {
@@ -207,4 +210,4 @@ export const tree2: BinaryNode<number> = {
           left: null,
       }
   }
-};
+}

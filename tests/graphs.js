@@ -1,8 +1,8 @@
-import prims from '@code/PrimsAlgorithm'
-import dfs_list from '@code/DFSGraphList'
-import bfs_matrix from '@code/BFSGraphMatrix'
+import {prims } from '@/graphs'
+import dfs_list from '@/DFSGraphList'
+import bfs_matrix from '@/BFSGraphMatrix'
 import bfs_list from '@/BFSGraphList'
-
+import dijkstra_list from '@/lists/dijkstra'
 
 test('bfs - graph', function () {
   expect(bfs_list(list2, 0, 6)).toEqual([
@@ -71,8 +71,6 @@ test('PrimsAlgorithm', function () {
   ])
 })
 
-import dijkstra_list from '@/lists/dijkstra'
-import { list1 } from '@@/graph'
 
 test('dijkstra via adj list', function () {
   /// waht?
