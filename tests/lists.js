@@ -18,26 +18,23 @@ import { expect } from 'jsr:@std/expect'
  * @typedef {import('@/lists.js').Ring_Buffer<number>}
  */
 
-describe('Lists Data structures', () => {
-  it('Array_List', () => {
-    /** @type {Array_List<number>} */
+describe('lists data structures', () => {
+  it('array_list', () => {
     const list = new Array_List()
     test_list(list)
   })
-  it('Tests Doubly_Linked_List', () => {
-    /** @type {Doubly_Linked_List<number>} */
+
+  it('doubly_linked_list', () => {
     const list = new Doubly_Linked_List()
     test_list(list)
   })
 
-  it('Tests Singly_Linked_list', () => {
-    /** @type {Singly_Linked_List<number>} */
+  it('singly_linked_list', () => {
     const list = new Singly_Linked_List()
     test_list(list)
   })
 
-  it('Tests Queue', () => {
-    /** @type {Queue<number>} */
+  it('queue', () => {
     const list = new Queue()
 
     list.enqueue(5)
@@ -56,15 +53,12 @@ describe('Lists Data structures', () => {
     expect(list.deque()).toEqual(undefined)
     expect(list.length).toEqual(0)
 
-    // just wanted to make sure that I could not blow up myself when i remove
-    // everything
     list.enqueue(69)
     expect(list.peek()).toEqual(69)
     expect(list.length).toEqual(1)
   })
 
-  it('Tests stack class', () => {
-    /** @type {Stack<number>} */
+  it('stack', () => {
     const list = new Stack()
 
     list.push(5)
@@ -81,15 +75,12 @@ describe('Lists Data structures', () => {
     expect(list.pop()).toEqual(5)
     expect(list.pop()).toEqual(undefined)
 
-    // just wanted to make sure that I could not blow up myself when i remove
-    // everything
     list.push(69)
     expect(list.peek()).toEqual(69)
     expect(list.length).toEqual(1)
   })
 
-  it('Tests Ring_Buffer', () => {
-    /** @type {Ring_Buffer<number>} */
+  it('ring_buffer', () => {
     const buffer = new Ring_Buffer(6)
 
     buffer.push(5)
@@ -116,7 +107,7 @@ describe('Lists Data structures', () => {
     buffer.push(12)
     expect(buffer.get(0)).toEqual(12)
     expect(buffer.get(1)).toEqual(9)
-    expect(buffer.get(2)).toEqual(42) // oldest node
+    expect(buffer.get(2)).toEqual(42)
 
     expect(buffer.unshift()).toEqual(12)
 
@@ -125,10 +116,6 @@ describe('Lists Data structures', () => {
   })
 })
 
-/**
- * Tests the functionality of a List implementation
- * @param {Array_List<number> | Doubly_Linked_List<number> | Singly_Linked_List<number>} list
-*/
 const test_list = (list) => {
   list.append(5)
   list.append(7)

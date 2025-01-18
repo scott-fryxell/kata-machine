@@ -1,35 +1,37 @@
-import quick_sort from '@code/QuickSort'
+import {
+  quick_sort,
+  insertion_sort,
+  merge_sort,
+  bubble_sort
+} from '@/sorting'
+import { describe, it } from 'jsr:@std/testing/bdd'
+import { expect } from 'jsr:@std/expect'
 
-import insertion_sort from '@code/InsertionSort'
+describe('sorting algorithms', () => {
+  const get_test_array = () => [9, 3, 7, 4, 69, 420, 42]
+  const sorted_array = [3, 4, 7, 9, 42, 69, 420]
 
-test('insertion-sort', function () {
-  const arr = [9, 3, 7, 4, 69, 420, 42]
-  // debugger
-  insertion_sort(arr)
-  expect(arr).toEqual([3, 4, 7, 9, 42, 69, 420])
-})
+  it('insertion sort', () => {
+    const arr = get_test_array()
+    insertion_sort(arr)
+    expect(arr).toEqual(sorted_array)
+  })
 
+  it('quick sort', () => {
+    const arr = get_test_array()
+    quick_sort(arr)
+    expect(arr).toEqual(sorted_array)
+  })
 
-test('quick-sort', function () {
-  const arr = [9, 3, 7, 4, 69, 420, 42]
-  // debugger
-  quick_sort(arr)
-  expect(arr).toEqual([3, 4, 7, 9, 42, 69, 420])
-})
-import merge_sort from '@code/MergeSort'
+  it('merge sort', () => {
+    const arr = get_test_array()
+    merge_sort(arr)
+    expect(arr).toEqual(sorted_array)
+  })
 
-test('merge-sort', function () {
-  const arr = [9, 3, 7, 4, 69, 420, 42]
-  merge_sort(arr)
-  expect(arr).toEqual([3, 4, 7, 9, 42, 69, 420])
-})
-
-import bubble_sort from '@/bubble_sort.js'
-
-test('bubble-sort', () => {
-  const arr = [9, 3, 7, 4, 69, 420, 42]
-
-  debugger
-  bubble_sort(arr)
-  expect(arr).toEqual([3, 4, 7, 9, 42, 69, 420])
+  it('bubble sort', () => {
+    const arr = get_test_array()
+    bubble_sort(arr)
+    expect(arr).toEqual(sorted_array)
+  })
 })

@@ -286,3 +286,78 @@ export const graph_depth_first_matrix = (graph, source, needle) => {
  * console.log(`Shortest path: ${result.path.join(' -> ')}`)
  * ```
  */
+
+/**
+ * Implements Prim's Minimum Spanning Tree algorithm
+ * @param {Weighted_Adjacency_List} graph - The weighted adjacency list representation of the graph
+ * @returns {Weighted_Adjacency_List} A new adjacency list representing the minimum spanning tree
+ *
+ * ```javascript
+ * const prims = (graph) => {
+ *   const visited = new Set()
+ *   const mst = Array.from({ length: graph.length }, () => [])
+ *
+ *   // Start from vertex 0
+ *   visited.add(0)
+ *
+ *   // Continue until all vertices are included in MST
+ *   while (visited.size < graph.length) {
+ *     let min_weight = Infinity
+ *     let min_edge = null
+ *     let min_vertex = null
+ *
+ *     // Find minimum weight edge from visited vertices to unvisited vertices
+ *     for (const vertex of visited) {
+ *       for (const edge of graph[vertex]) {
+ *         if (!visited.has(edge.to) && edge.weight < min_weight) {
+ *           min_weight = edge.weight
+ *           min_edge = edge
+ *           min_vertex = vertex
+ *         }
+ *       }
+ *     }
+ *
+ *     if (min_edge === null) break // Graph is disconnected
+ *
+ *     // Add edge to MST
+ *     mst[min_vertex].push(min_edge)
+ *     mst[min_edge.to].push({ to: min_vertex, weight: min_edge.weight })
+ *     visited.add(min_edge.to)
+ *   }
+ *
+ *   return mst
+ * }
+ * ```
+ *
+ * Example return value:
+ * ```javascript
+ * [
+ *   [
+ *     { to: 2, weight: 1 },
+ *     { to: 1, weight: 3 }
+ *   ],
+ *   [
+ *     { to: 0, weight: 3 },
+ *     { to: 4, weight: 1 }
+ *   ],
+ *   [{ to: 0, weight: 1 }],
+ *   [{ to: 6, weight: 1 }],
+ *   [
+ *     { to: 1, weight: 1 },
+ *     { to: 5, weight: 2 }
+ *   ],
+ *   [
+ *     { to: 4, weight: 2 },
+ *     { to: 6, weight: 1 }
+ *   ],
+ *   [
+ *     { to: 5, weight: 1 },
+ *     { to: 3, weight: 1 }
+ *   ]
+ * ]
+ * ```
+ */
+export const prims = (graph) => {
+  console.log(graph)
+  return []
+}
