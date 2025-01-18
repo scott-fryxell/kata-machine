@@ -97,6 +97,16 @@ export const graph_breadth_first_matrix = (graph, source, needle) => {
   console.log(graph, source, needle)
   return null
 }
+/**
+ * @param {Weighted_Adjacency_List} graph
+ * @param {number} source
+ * @param {number} needle
+ * @returns {number[]|null}
+ */
+export const graph_breadth_first_list = (graph, source, needle) => {
+  console.log(graph, source, needle)
+  return null
+}
 
 /**
  * @param {Weighted_Adjacency_List} graph
@@ -219,6 +229,17 @@ export const graph_depth_first_matrix = (graph, source, needle) => {
 /**
  * @typedef {Object.<number, Edge[]>} Graph
  */
+
+/**
+ * Finds the shortest path between two vertices using Dijkstra's algorithm
+ * @param {number} source - Starting vertex
+ * @param {number} sink - Ending vertex
+ * @param {Weighted_Adjacency_List} graph - Graph represented as weighted adjacency list
+ * @returns {number[]} - Array representing the shortest path
+ */
+const dijkstra_shortest_path = (source, sink, graph) => {
+    throw new Error('not implemented')
+}
 
 /**
  * Implements Dijkstra's algorithm using an adjacency list
@@ -371,3 +392,8 @@ export const prims = (graph) => {
 /**
  * @typedef {Object.<number, weighted_graph_edge[]>} weighted_graph
  */
+
+export {
+    dijkstra_shortest_path,
+    // ... other exports ...
+}

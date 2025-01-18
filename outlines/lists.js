@@ -37,7 +37,6 @@
  */
 export const Queue = class {
   /**
-   * @private
    * @type {number}
    */
   length
@@ -90,19 +89,18 @@ export const Queue = class {
 export const Stack = class {
   /**
    * @type {number}
-   * @private
    */
   length
 
   /**
-   * @type {Stack_Node<T> | undefined}
    * @private
+   * @type {Stack_Node<T> | undefined}
    */
   head
 
   constructor() {
     this.length = 0
-    console.log(this.length, this.head)
+    this.head = undefined
   }
 
   /**

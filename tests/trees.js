@@ -1,5 +1,5 @@
 /**
- * @typedef {import('@/trees.js').Binary_Node} Binary_Node
+ * @typedef {import('@/trees.js').Binary_Node<number>} Number_Node
  */
 
 import {
@@ -9,8 +9,9 @@ import {
   btree_post_order,
   btree_in_order,
   btree_depth_first,
-  min_heap,
-  trie
+  Min_Heap,
+  Trie,
+  prims
 } from '@/trees.js'
 
 import { describe, it } from 'jsr:@std/testing/bdd'
@@ -53,7 +54,7 @@ describe('tree tests', () => {
   })
 
   it('trie operations', () => {
-    const trie_instance = new trie()
+    const trie_instance = new Trie()
     trie_instance.insert('foo')
     trie_instance.insert('fool')
     trie_instance.insert('foolish')
@@ -74,7 +75,7 @@ describe('tree tests', () => {
   })
 
   it('min heap operations', () => {
-    const heap = new min_heap()
+    const heap = new Min_Heap()
 
     expect(heap.length).toEqual(0)
 
@@ -202,3 +203,35 @@ export const tree2 = {
       }
   }
 }
+prims([
+  [ // 0
+    { to: 2, weight: 1 },
+    { to: 1, weight: 3 },
+  ],
+  [ // 1
+    { to: 0, weight: 3 },
+    { to: 4, weight: 1 },
+    { to: 3, weight: 3 },
+  ],
+  [ // 2
+    { to: 0, weight: 1 },
+    { to: 3, weight: 7 },
+  ],
+  [ // 3
+    { to: 6, weight: 1 },
+    { to: 1, weight: 3 },
+    { to: 2, weight: 7 },
+  ],
+  [ // 4
+    { to: 1, weight: 1 },
+    { to: 5, weight: 2 },
+  ],
+  [ // 5
+    { to: 4, weight: 2 },
+    { to: 6, weight: 1 },
+  ],
+  [ // 6
+    { to: 5, weight: 1 },
+    { to: 3, weight: 1 },
+  ],
+])

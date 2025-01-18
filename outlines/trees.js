@@ -104,7 +104,6 @@ export const btree_breadth_first = (head, needle) => {
 export const Min_Heap = class {
   /**
    * @type {number}
-   * @private
    */
   length
 
@@ -123,6 +122,14 @@ export const Min_Heap = class {
    * @returns {number}
    */
   delete() {
+    return this.length
+  }
+
+  /**
+   * Gets the current length of the heap
+   * @returns {number}
+   */
+  get_length() {
     return this.length
   }
 }
@@ -162,13 +169,13 @@ export const Trie = class {
 }
 
 /**
- * @typedef {Object} GraphEdge
+ * @typedef {Object} Graph_Edge
  * @property {number} to
  * @property {number} weight
  */
 
 /**
- * @typedef {GraphEdge[]} Weighted_Adjacency_List
+ * @typedef {Array<Array<Graph_Edge>>} Weighted_Adjacency_List
  */
 
 /**
@@ -189,56 +196,9 @@ export const Trie = class {
  * @param {Weighted_Adjacency_List} list
  * @returns {Weighted_Adjacency_List | null}
  */
-export default function prims(list) {
-  /** @type {boolean[]} */
-  const visited = new Array(list.length).fill(false)
-
-  /** @type {GraphEdge[][]} */
-  const mst = new Array(list.length).fill(null).map(() => [])
-
-  // 1.
-  visited[0] = true
-  let current = 0
-
-  /** @type {[number, GraphEdge][]} */
-  const edges = []
-
-  do {
-    // 2. put all dem edges in the list
-    for (const edge_me_daddy of list[current]) {
-      edges.push([current, edge_me_daddy])
-    }
-
-    // 3. select edge that is the lowest value and to a node we haven't seen yet
-    let lowest = Infinity
-    /** @type {[number, GraphEdge | null]} */
-    let lowest_edge = [-1, null]
-    for (const edge of edges) {
-      if (visited[edge[1].to] === false && edge[1].weight < lowest) {
-        lowest = edge[1].weight
-        lowest_edge = edge
-      }
-    }
-
-    // 4. we need to insert the edge from current to new into our mst, set visited, and remove the potential edge
-    if (lowest_edge[1] !== null) {
-      mst[lowest_edge[0]].push(lowest_edge[1])
-      mst[lowest_edge[1].to].push({
-        to: lowest_edge[0],
-        weight: lowest_edge[1].weight,
-      })
-      visited[lowest_edge[1].to] = true
-      edges.splice(
-        edges.indexOf(/** @type {[number, GraphEdge]} */ (lowest_edge)),
-        1,
-      )
-    }
-
-    // 5. the newly selected node becomes the current node
-    current = lowest_edge[1]?.to || -1
-  } while (visited.includes(false) && current >= 0)
-
-  return mst
+export const prims = (list) => {
+  console.log(list)
+  return null
 }
 
 prims([
