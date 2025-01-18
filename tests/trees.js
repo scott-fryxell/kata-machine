@@ -1,3 +1,7 @@
+/**
+ * @typedef {import('@/trees.js').Binary_Node} Binary_Node
+ */
+
 import {
   btree_breadth_first,
   btree_compare,
@@ -5,9 +9,9 @@ import {
   btree_post_order,
   btree_in_order,
   btree_depth_first,
-  Min_Heap,
-  Trie
-} from '@/trees'
+  min_heap,
+  trie
+} from '@/trees.js'
 
 import { describe, it } from 'jsr:@std/testing/bdd'
 import { expect } from 'jsr:@std/expect'
@@ -49,28 +53,28 @@ describe('tree tests', () => {
   })
 
   it('trie operations', () => {
-    const trie = new Trie()
-    trie.insert('foo')
-    trie.insert('fool')
-    trie.insert('foolish')
-    trie.insert('bar')
+    const trie_instance = new trie()
+    trie_instance.insert('foo')
+    trie_instance.insert('fool')
+    trie_instance.insert('foolish')
+    trie_instance.insert('bar')
 
-    expect(trie.find('fo').sort()).toEqual([
+    expect(trie_instance.find('fo').sort()).toEqual([
       'foo',
       'fool',
       'foolish'
     ])
 
-    trie.delete('fool')
+    trie_instance.delete('fool')
 
-    expect(trie.find('fo').sort()).toEqual([
+    expect(trie_instance.find('fo').sort()).toEqual([
       'foo',
       'foolish'
     ])
   })
 
   it('min heap operations', () => {
-    const heap = new Min_Heap()
+    const heap = new min_heap()
 
     expect(heap.length).toEqual(0)
 
@@ -98,14 +102,15 @@ describe('tree tests', () => {
 })
 
 /**
+ * @template T
  * @typedef {Object} Binary_Node
- * @property {number} value
- * @property {Binary_Node|null} left
- * @property {Binary_Node|null} right
+ * @property {T} value
+ * @property {Binary_Node<T>|null} left
+ * @property {Binary_Node<T>|null} right
  */
 
 /**
- * @type {Binary_Node}
+ * @type {Binary_Node<number>}
  */
 export const tree = {
   value: 20,
@@ -150,7 +155,7 @@ export const tree = {
 }
 
 /**
- * @type {Binary_Node}
+ * @type {Binary_Node<number>}
  */
 export const tree2 = {
   value: 20,

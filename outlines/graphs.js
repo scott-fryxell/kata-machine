@@ -361,3 +361,13 @@ export const prims = (graph) => {
   console.log(graph)
   return []
 }
+
+/**
+ * @typedef {Object} weighted_graph_edge
+ * @property {number} node - The destination node
+ * @property {number} weight - The weight of the edge
+ */
+
+/**
+ * @typedef {Object.<number, weighted_graph_edge[]>} weighted_graph
+ */

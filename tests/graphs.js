@@ -1,18 +1,18 @@
+/**
+ * @typedef {import('@/graphs.js').Weighted_Adjacency_List} Weighted_Adjacency_List
+ * @typedef {import('@/graphs.js').Weighted_Adjacency_Matrix} Weighted_Adjacency_Matrix
+ */
+
 import {
   graph_depth_first_list,
   graph_breadth_first_matrix,
   graph_breadth_first_list,
   dijkstra_shortest_path,
   prims
-} from '@/graphs'
+} from '@/graphs.js'
 
 import { describe, it } from 'jsr:@std/testing/bdd'
 import { expect } from 'jsr:@std/expect'
-
-/**
- * @typedef {import('@/types').Weighted_Adjacency_List} Weighted_Adjacency_List
- * @typedef {import('@/types').Weighted_Adjacency_Matrix} Weighted_Adjacency_Matrix
- */
 
 describe('graph tests', () => {
   it('graph breadth first search - list', () => {

@@ -1,4 +1,4 @@
-import { maze_solver } from '@/recursion'
+import { maze_solver } from '@/recursion.js'
 import { describe, it } from 'jsr:@std/testing/bdd'
 import { expect } from 'jsr:@std/expect'
 

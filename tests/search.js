@@ -1,4 +1,4 @@
-import { linear_search, binary_search, two_crystal_balls } from '@/search'
+import { linear_search, binary_search, two_crystal_balls } from '@/search.js'
 import { describe, it } from 'jsr:@std/testing/bdd'
 import { expect } from 'jsr:@std/expect'
 

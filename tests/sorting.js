@@ -3,7 +3,7 @@ import {
   insertion_sort,
   merge_sort,
   bubble_sort
-} from '@/sorting'
+} from '@/sorting.js'
 import { describe, it } from 'jsr:@std/testing/bdd'
 import { expect } from 'jsr:@std/expect'
 
