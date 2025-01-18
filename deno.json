@@ -6,7 +6,9 @@
   "tasks": {
     "generate": "deno run --allow-read --allow-write scripts/generate.js"
   },
-  "include": [],
+  "include": [
+    "./outlines/**/*.js"
+  ],
   "test": {
     "include": [
       "./tests/**/*.js"

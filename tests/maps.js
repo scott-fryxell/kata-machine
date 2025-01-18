@@ -1,7 +1,7 @@
-import MyMap from "@code/Map";
+import MyMap from "@/maps";
 import LRU from "@code/LRU";
 
-test("Map", function() {
+("Map", function() {
     const map = new MyMap<string, number>();
     map.set("foo", 55);
     expect(map.size()).toEqual(1);

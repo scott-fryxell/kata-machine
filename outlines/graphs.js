@@ -36,7 +36,6 @@
  * - Dependency analysis
  */
 
-
 /**
  * @typedef {Object} vertex
  * @property {*} value - The value stored in the vertex
@@ -61,24 +60,21 @@
  * }
  * ```
  */
+
 /**
-* Adds an edge between two vertices in the graph
-* @param {graph} graph - The graph to modify
-* @param {vertex} start - The starting vertex of the edge
-* @param {vertex} end - The ending vertex of the edge
-* @param {number} [weight] - The weight of the edge (optional)
-* @returns {edge} The newly created edge
-*
-* ```javascript
-*  function add_edge(graph, start, end, weight) {
-*    // Implementation details...
-*  }
-*```
-*/
-
-
-
-
+ * Adds an edge between two vertices in the graph
+ * @param {graph} graph - The graph to modify
+ * @param {vertex} start - The starting vertex of the edge
+ * @param {vertex} end - The ending vertex of the edge
+ * @param {number} [weight] - The weight of the edge (optional)
+ * @returns {edge} The newly created edge
+ *
+ * ```javascript
+ *  function add_edge(graph, start, end, weight) {
+ *    // Implementation details...
+ *  }
+ * ```
+ */
 
 /**
  * @param {Weighted_Adjacency_List} list - The weighted adjacency list.
@@ -142,11 +138,10 @@ export const graph_depth_first_matrix = (graph, source, needle) => {
 /** @typedef {Graph_Edge[][]} Weighted_Adjacency_List */
 /** @typedef {number[][]} Weighted_Adjacency_Matrix */
 
-
 // Dijkstra's Shortest Path Algorithm
 
 /**
- * @typedef {Object} Graph
+ * @typedef {Object} D_Graph
  * @property {number} node
  * @property {number} weight
  */
@@ -212,61 +207,7 @@ export const graph_depth_first_matrix = (graph, source, needle) => {
  *
  *   is_empty = () => this.heap.length === 0
  * }
- *
- * Implements Dijkstra's algorithm using a priority queue
- *  @param {Graph} graph - The graph represented as an adjacency list
- *  @param {number} start - The starting node
- *  @param {number} end - The ending node
- *  @returns {Object} An object containing the shortest distance and the path
- *
- * ```javascript
- * const dijkstra_shortest_path = (graph, start, end) => {
- *   const distances = {}
- *   const previous = {}
- *   const pq = new priority_queue()
- *
- *   // Initialize distances
- *   for (const node in graph) {
- *     distances[node] = node == start ? 0 : Infinity
- *     previous[node] = null
- *   }
- *
- *   pq.enqueue([start, 0])
- *
- *   while (!pq.is_empty()) {
- *     const [current, distance] = pq.dequeue()
- *
- *     // If we've reached the end node, construct and return the path
- *     if (current === end) {
- *       const path = []
- *       let node = end
- *       while (node !== null) {
- *         path.unshift(node)
- *         node = previous[node]
- *       }
- *       return { distance: distances[end], path }
- *     }
- *
- *     // If we've found a longer path, skip
- *     if (distance > distances[current]) continue
- *
- *     // Check all neighboring nodes
- *     for (const { node: neighbor, weight } of graph[current]) {
- *       const alt = distance + weight
- *       if (alt < distances[neighbor]) {
- *         distances[neighbor] = alt
- *         previous[neighbor] = current
- *         pq.enqueue([neighbor, alt])
- *       }
- *     }
- *   }
- *
- *   // If we get here, there's no path to the end node
- *   return { distance: Infinity, path: [] }
- * }
- * ```
  */
-
 
 // https://claude.ai/chat/07845e1e-2c16-47f8-9020-4ccf8aca020f
 /**
@@ -285,7 +226,7 @@ export const graph_depth_first_matrix = (graph, source, needle) => {
  * @param {number} start - The starting node
  * @param {number} end - The ending node
  * @returns {Object} An object containing the shortest distance and the path
- *```javascript
+ * ```javascript
  * const dijkstra_shortest_path = (graph, start, end) => {
  *   const distances = {}
  *   const previous = {}

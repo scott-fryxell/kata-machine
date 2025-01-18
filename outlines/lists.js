@@ -32,8 +32,6 @@
  * @property {function(T, number): void} insert_at
  */
 
-
-
 /**
  * @template T
  */
@@ -290,7 +288,6 @@ export const Array_List = class {
     console.log(item, idx)
   }
 
-
   /**
    * @param {T} item
    * @returns {void}
@@ -298,7 +295,6 @@ export const Array_List = class {
   prepend(item) {
     console.log(item)
   }
-
 
   /**
    * @param {T} item

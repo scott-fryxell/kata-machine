@@ -32,7 +32,6 @@ export const Least_Recently_Used = class {
   }
 }
 
-
 /**
  * @template {string | number} T
  * @template V
@@ -75,18 +74,12 @@ export const Map = class {
   }
 }
 
-
-
-
 /**
  * @template K, V
  * @typedef {Object} Least_Recently_Used
  * @property {function(K, V): void} update
  * @property {function(K): V|undefined} get
  */
-
-
-
 
 /**
  * Bloom Filter Overview
@@ -163,8 +156,6 @@ export const Map = class {
  * ```
  */
 
-
-
 /**
  * Hash Map Overview
  *
@@ -192,7 +183,6 @@ export const Map = class {
  * const my_hash = new Hash()
  * my_hash.insert('name', 'Alice')
  * my_hash.get('name') // Returns 'Alice'
- *
  *
  * Hashes are widely used in various applications, including:
  * - Implementing associative arrays
@@ -257,10 +247,7 @@ export const Map = class {
  * ```
  */
 
-
-
-
-class Bloom_Filter {
+export class Bloom_Filter {
   /**
    * @param {number} size - The size of the bit array
    * @param {number} num_hash_functions - The number of hash functions to use
@@ -327,5 +314,3 @@ class Bloom_Filter {
 // console.log(bloom_filter.might_contain('apple')) // true
 // console.log(bloom_filter.might_contain('banana')) // true
 // console.log(bloom_filter.might_contain('date')) // false (probably)
-
-

@@ -24,7 +24,6 @@
  * - Lookup tables
  */
 
-
 /**
  * @param {Binary_Node<number> | null} a
  * @param {Binary_Node<number> | null} b
@@ -92,15 +91,12 @@ export const btree_breadth_first = (head, needle) => {
 
 /** @typedef {Binary_Node<number>} Binary_Tree */
 
-
 /**
  * @template T
  * @typedef {Object} General_Node
  * @property {T} value
  * @property {General_Node<T>[]} children
  */
-
-
 
 /**
  * @class MinHeap
@@ -165,7 +161,6 @@ export const Trie = class {
   }
 }
 
-
 /**
  * @typedef {Object} GraphEdge
  * @property {number} to
@@ -173,7 +168,7 @@ export const Trie = class {
  */
 
 /**
- * @typedef {GraphEdge[]} WeightedAdjacencyList
+ * @typedef {GraphEdge[]} Weighted_Adjacency_List
  */
 
 /**
@@ -191,12 +186,13 @@ export const Trie = class {
  * ...
  * 8. $$
  *
- * @param {WeightedAdjacencyList} list
- * @returns {WeightedAdjacencyList | null}
+ * @param {Weighted_Adjacency_List} list
+ * @returns {Weighted_Adjacency_List | null}
  */
 export default function prims(list) {
   /** @type {boolean[]} */
   const visited = new Array(list.length).fill(false)
+
   /** @type {GraphEdge[][]} */
   const mst = new Array(list.length).fill(null).map(() => [])
 
@@ -245,37 +241,35 @@ export default function prims(list) {
   return mst
 }
 
-if (require.main === module) {
-  prims([
-    [ // 0
-      { to: 2, weight: 1 },
-      { to: 1, weight: 3 },
-    ],
-    [ // 1
-      { to: 0, weight: 3 },
-      { to: 4, weight: 1 },
-      { to: 3, weight: 3 },
-    ],
-    [ // 2
-      { to: 0, weight: 1 },
-      { to: 3, weight: 7 },
-    ],
-    [ // 3
-      { to: 6, weight: 1 },
-      { to: 1, weight: 3 },
-      { to: 2, weight: 7 },
-    ],
-    [ // 4
-      { to: 1, weight: 1 },
-      { to: 5, weight: 2 },
-    ],
-    [ // 5
-      { to: 4, weight: 2 },
-      { to: 6, weight: 1 },
-    ],
-    [ // 6
-      { to: 5, weight: 1 },
-      { to: 3, weight: 1 },
-    ],
-  ])
-}
+prims([
+  [ // 0
+    { to: 2, weight: 1 },
+    { to: 1, weight: 3 },
+  ],
+  [ // 1
+    { to: 0, weight: 3 },
+    { to: 4, weight: 1 },
+    { to: 3, weight: 3 },
+  ],
+  [ // 2
+    { to: 0, weight: 1 },
+    { to: 3, weight: 7 },
+  ],
+  [ // 3
+    { to: 6, weight: 1 },
+    { to: 1, weight: 3 },
+    { to: 2, weight: 7 },
+  ],
+  [ // 4
+    { to: 1, weight: 1 },
+    { to: 5, weight: 2 },
+  ],
+  [ // 5
+    { to: 4, weight: 2 },
+    { to: 6, weight: 1 },
+  ],
+  [ // 6
+    { to: 5, weight: 1 },
+    { to: 3, weight: 1 },
+  ],
+])
