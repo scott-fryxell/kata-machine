@@ -342,10 +342,10 @@ export const Ring_Buffer = class {
   length
 
   /**
-   * @param {number} initial_size
+   * @param {number} capacity
    */
-  constructor(initial_size) {
-    this.length = initial_size
+  constructor(capacity) {
+    this.length = capacity
     console.log(this.length)
   }
 
