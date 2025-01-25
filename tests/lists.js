@@ -1,3 +1,11 @@
+/**
+ * @typedef {import('@/lists.js').List<number>} List
+ */
+
+/**
+ * @typedef {import('@/lists.js').Queue<number>} Queue
+ */
+
 import {
   Array_List,
   Doubly_Linked_List,
@@ -8,15 +16,6 @@ import {
 } from '@/lists.js'
 import { describe, it } from 'jsr:@std/testing/bdd'
 import { expect } from 'jsr:@std/expect'
-
-/**
- * @typedef {import('@/lists.js').List<number>}
- * @typedef {import('@/lists.js').Queue<number>}
- * @typedef {import('@/lists.js').Singly_Linked_List<number>}
- * @typedef {import('@/lists.js').Doubly_Linked_List<number>}
- * @typedef {import('@/lists.js').Array_List<number>}
- * @typedef {import('@/lists.js').Ring_Buffer<number>}
- */
 
 describe('lists data structures', () => {
   it('array_list', () => {
@@ -116,7 +115,11 @@ describe('lists data structures', () => {
   })
 })
 
-const test_list = (list) => {
+/**
+ * @param {List} list
+ */
+const test_list = list => {
+  console.log('list', list)
   list.append(5)
   list.append(7)
   list.append(9)

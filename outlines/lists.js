@@ -360,11 +360,10 @@ export const Ring_Buffer = class {
 
   /**
    * Remove from the beginning of the buffer
-   * @param {T} item
    * @returns {void}
    */
-  unshift(item) {
-    console.log(item)
+  unshift() {
+    console.log('unshift')
   }
 
   /**
@@ -377,11 +376,10 @@ export const Ring_Buffer = class {
   }
 
   /**
-   * @param {T} item
    * @returns {T | undefined}
    */
-  pop(item) {
-    console.log(item)
+  pop() {
+    console.log('pop')
     return undefined
   }
 

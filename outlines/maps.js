@@ -8,7 +8,12 @@ export const Least_Recently_Used = class {
    * @type {number}
    */
   length
-  constructor() {
+  /**
+   * @param {number} capacity
+   */
+  constructor(capacity) {
+    this.capacity = capacity
+    this.cache = new Map()
     this.length = 0
     console.log(this.length)
   }
