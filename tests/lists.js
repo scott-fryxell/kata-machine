@@ -2,10 +2,6 @@
  * @typedef {import('@/lists.js').List<number>} List
  */
 
-/**
- * @typedef {import('@/lists.js').Queue<number>} Queue
- */
-
 import {
   Array_List,
   Doubly_Linked_List,
@@ -118,7 +114,7 @@ describe('lists data structures', () => {
 /**
  * @param {List} list
  */
-const test_list = list => {
+const test_list = (list) => {
   console.log('list', list)
   list.append(5)
   list.append(7)

@@ -5,13 +5,13 @@
 import {
   btree_breadth_first,
   btree_compare,
-  btree_pre_order,
-  btree_post_order,
-  btree_in_order,
   btree_depth_first,
+  btree_in_order,
+  btree_post_order,
+  btree_pre_order,
   Min_Heap,
+  prims,
   Trie,
-  prims
 } from '@/trees.js'
 
 import { describe, it } from 'jsr:@std/testing/bdd'
@@ -26,19 +26,46 @@ describe('tree tests', () => {
 
   it('in order traversal', () => {
     expect(btree_in_order(tree)).toEqual([
-      5, 7, 10, 15, 20, 29, 30, 45, 50, 100
+      5,
+      7,
+      10,
+      15,
+      20,
+      29,
+      30,
+      45,
+      50,
+      100,
     ])
   })
 
   it('post order traversal', () => {
     expect(btree_post_order(tree)).toEqual([
-      7, 5, 15, 10, 29, 45, 30, 100, 50, 20
+      7,
+      5,
+      15,
+      10,
+      29,
+      45,
+      30,
+      100,
+      50,
+      20,
     ])
   })
 
   it('pre order traversal', () => {
     expect(btree_pre_order(tree)).toEqual([
-      20, 10, 5, 7, 15, 50, 30, 29, 45, 100
+      20,
+      10,
+      5,
+      7,
+      15,
+      50,
+      30,
+      29,
+      45,
+      100,
     ])
   })
 
@@ -63,14 +90,14 @@ describe('tree tests', () => {
     expect(trie_instance.find('fo').sort()).toEqual([
       'foo',
       'fool',
-      'foolish'
+      'foolish',
     ])
 
     trie_instance.delete('fool')
 
     expect(trie_instance.find('fo').sort()).toEqual([
       'foo',
-      'foolish'
+      'foolish',
     ])
   })
 
@@ -116,43 +143,43 @@ describe('tree tests', () => {
 export const tree = {
   value: 20,
   right: {
-      value: 50,
+    value: 50,
+    right: {
+      value: 100,
+      right: null,
+      left: null,
+    },
+    left: {
+      value: 30,
       right: {
-          value: 100,
-          right: null,
-          left: null,
+        value: 45,
+        right: null,
+        left: null,
       },
       left: {
-          value: 30,
-          right: {
-              value: 45,
-              right: null,
-              left: null,
-          },
-          left: {
-              value: 29,
-              right: null,
-              left: null,
-          }
+        value: 29,
+        right: null,
+        left: null,
       },
+    },
   },
   left: {
-      value: 10,
+    value: 10,
+    right: {
+      value: 15,
+      right: null,
+      left: null,
+    },
+    left: {
+      value: 5,
       right: {
-          value: 15,
-          right: null,
-          left: null,
+        value: 7,
+        right: null,
+        left: null,
       },
-      left: {
-          value: 5,
-          right: {
-              value: 7,
-              right: null,
-              left: null,
-          },
-          left: null,
-      }
-  }
+      left: null,
+    },
+  },
 }
 
 /**
@@ -161,47 +188,47 @@ export const tree = {
 export const tree2 = {
   value: 20,
   right: {
-      value: 50,
-      right: null,
-      left: {
-          value: 30,
-          right: {
-              value: 45,
-              right: {
-                  value: 49,
-                  left: null,
-                  right: null,
-              },
-              left: null,
-          },
-          left: {
-              value: 29,
-              right: null,
-              left: {
-                  value: 21,
-                  right: null,
-                  left: null,
-              },
-          }
-      },
-  },
-  left: {
-      value: 10,
+    value: 50,
+    right: null,
+    left: {
+      value: 30,
       right: {
-          value: 15,
+        value: 45,
+        right: {
+          value: 49,
+          left: null,
+          right: null,
+        },
+        left: null,
+      },
+      left: {
+        value: 29,
+        right: null,
+        left: {
+          value: 21,
           right: null,
           left: null,
+        },
       },
-      left: {
-          value: 5,
-          right: {
-              value: 7,
-              right: null,
-              left: null,
-          },
-          left: null,
-      }
-  }
+    },
+  },
+  left: {
+    value: 10,
+    right: {
+      value: 15,
+      right: null,
+      left: null,
+    },
+    left: {
+      value: 5,
+      right: {
+        value: 7,
+        right: null,
+        left: null,
+      },
+      left: null,
+    },
+  },
 }
 prims([
   [ // 0

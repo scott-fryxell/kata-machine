@@ -16,7 +16,7 @@ describe('recursion', () => {
       'x        x x',
       'x xxxxxxxx x',
       'x          x',
-      'x xxxxxxxxxx'
+      'x xxxxxxxxxx',
     ]
 
     const maze_result = [
@@ -34,7 +34,7 @@ describe('recursion', () => {
       { x: 3, y: 4 },
       { x: 2, y: 4 },
       { x: 1, y: 4 },
-      { x: 1, y: 5 }
+      { x: 1, y: 5 },
     ]
 
     // there is only one path through
@@ -42,7 +42,7 @@ describe('recursion', () => {
       maze,
       'x',
       { x: 10, y: 0 },
-      { x: 1, y: 5 }
+      { x: 1, y: 5 },
     )
     expect(draw_path(maze, result)).toEqual(draw_path(maze, maze_result))
   })
@@ -60,6 +60,5 @@ const draw_path = (data, path) => {
       data2[p.y][p.x] = '*'
     }
   })
-  return data2.map(d => d.join(''))
+  return data2.map((d) => d.join(''))
 }
-

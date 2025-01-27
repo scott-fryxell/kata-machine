@@ -57,11 +57,13 @@ Data Structures are like containers or organizational systems - they're about HO
 - Hash Tables are like a library index card system, where items are stored based on a key
 
 Algorithms, on the other hand, are the step-by-step instructions for working with those data structures - they're about WHAT we do with the data. For example:
+
 - Sorting algorithms arrange items in order
 - Search algorithms find specific items
 - Graph algorithms find paths between points
 
 Here's a practical example to tie them together:
+
 ```js
 /**
  * @typedef {Object} PhoneDirectory
@@ -72,8 +74,8 @@ Here's a practical example to tie them together:
  * @type {PhoneDirectory}
  */
 const phone_directory = {
-    phone_numbers: [5551234, 5555678, 5559012]
-};
+  phone_numbers: [5551234, 5555678, 5559012],
+}
 
 /**
  * Searches for a phone number in the directory
@@ -82,19 +84,21 @@ const phone_directory = {
  * @returns {boolean} True if number is found, false otherwise
  */
 function find_number(numbers, target) {
-    for (const number of numbers) {
-        if (number === target) {
-            return true;
-        }
+  for (const number of numbers) {
+    if (number === target) {
+      return true
     }
-    return false;
+  }
+  return false
 }
 
 // Example usage
-const is_found = find_number(phone_directory.phone_numbers, 5555678);
-console.log(is_found); // true
+const is_found = find_number(phone_directory.phone_numbers, 5555678)
+console.log(is_found) // true
 ```
+
 The key relationship is that algorithms often depend on data structures, and different data structures make different algorithms more or less efficient. For instance:
+
 - Searching through a sorted array can use binary search (very fast)
 - Searching through a hash table is even faster for lookups
 - But inserting into an array is slow, while inserting into a linked list is fast

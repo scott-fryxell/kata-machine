@@ -19,4 +19,3 @@ export const maze_solver = (maze, wall, start, end) => {
   console.log(maze, wall, start, end)
   return []
 }
-

@@ -238,7 +238,7 @@ export const graph_depth_first_matrix = (graph, source, needle) => {
  * @returns {number[]} - Array representing the shortest path
  */
 const dijkstra_shortest_path = (source, sink, graph) => {
-    throw new Error('not implemented')
+  throw new Error('not implemented')
 }
 
 /**
@@ -394,6 +394,6 @@ export const prims = (graph) => {
  */
 
 export {
-    dijkstra_shortest_path,
-    // ... other exports ...
+  dijkstra_shortest_path,
+  // ... other exports ...
 }

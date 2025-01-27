@@ -2,10 +2,9 @@
  * @typedef {import('@/maps.js').Least_Recently_Used<string, number>} String_Number_LRU
  */
 
-import { Map, Least_Recently_Used } from '@/maps.js'
+import { Least_Recently_Used, Map } from '@/maps.js'
 import { describe, it } from 'jsr:@std/testing/bdd'
 import { expect } from 'jsr:@std/expect'
-
 
 describe('map tests', () => {
   it('map operations', () => {
@@ -59,4 +58,3 @@ describe('map tests', () => {
     expect(lru.get('baz')).toEqual(undefined)
   })
 })
-
